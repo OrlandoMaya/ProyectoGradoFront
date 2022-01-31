@@ -3,6 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { IMqttMessage, MqttModule, IMqttServiceOptions } from 'ngx-mqtt';
+
+export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions={
+  hostname:'localhost',
+  connectTimeout:4000,
+  clientId:'emqx',
+  keepalive:60,
+  port:8083,
+  path:'/mqtt',
+  clean:true
+}
 
 @NgModule({
   declarations: [
@@ -10,7 +21,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MqttModule.forRoot(MQTT_SERVICE_OPTIONS)
   ],
   providers: [],
   bootstrap: [AppComponent]
