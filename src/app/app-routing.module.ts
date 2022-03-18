@@ -5,13 +5,15 @@ import { LoginComponent } from './views/login/login.component';
 import { MapComponent } from './views/map/map.component';
 
 const routes: Routes = [
-  {path:'home', component:HomeComponent},
-  {path:'map', component:MapComponent},
-  {path:'login', component:LoginComponent}
+  { path: 'home', component: HomeComponent },
+  { path: 'map', component: MapComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  //{ path: '**', redirectTo: '404', pathMatch: 'full' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
