@@ -10,6 +10,9 @@ import { CreateUserComponent } from './dashboard/create-user/create-user.compone
 import { MapComponent } from './views/map/map.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatButtonModule} from '@angular/material/button';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions={
   hostname:'localhost',
@@ -34,7 +37,10 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions={
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MqttModule.forRoot(MQTT_SERVICE_OPTIONS)
+    MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
+    BrowserAnimationsModule,
+
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
