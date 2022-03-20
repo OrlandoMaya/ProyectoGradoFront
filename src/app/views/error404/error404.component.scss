@@ -1,0 +1,29 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+
+  display: flex;
+  height: 100vh;
+  background-color: #111;
+}
+
+canvas {
+  margin: auto;
+}
+
+span {
+  color: rgb(238, 234, 234);
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  user-select: none;
+}
+
+span h1{
+  font-size: 400%;
+}
+
+a{
+  color:aliceblue;
+}

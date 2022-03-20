@@ -12,17 +12,19 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { Error404Component } from './views/error404/error404.component';
+import { SpiralService } from './spiral.service';
 
-export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions={
-  hostname:'localhost',
-  connectTimeout:4000,
-  clientId:'emqx',
-  keepalive:60,
-  port:8083,
-  path:'/mqtt',
-  clean:true
-}
+export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
+  hostname: 'localhost',
+  connectTimeout: 4000,
+  clientId: 'emqx',
+  keepalive: 60,
+  port: 8083,
+  path: '/mqtt',
+  clean: true,
+};
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions={
     CreateUserComponent,
     MapComponent,
     SidebarComponent,
-    NavbarComponent
+    NavbarComponent,
+    Error404Component,
   ],
   imports: [
     BrowserModule,
@@ -40,9 +43,9 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions={
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
     BrowserAnimationsModule,
 
-    MatButtonModule
+    MatButtonModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [SpiralService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
