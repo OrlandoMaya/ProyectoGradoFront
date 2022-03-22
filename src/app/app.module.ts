@@ -12,9 +12,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatButtonModule } from '@angular/material/button';
 import { Error404Component } from './views/error404/error404.component';
 import { SpiralService } from './spiral.service';
+import { MaterialModule } from './material/material.module';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   hostname: 'localhost',
@@ -42,8 +42,8 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     AppRoutingModule,
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
     BrowserAnimationsModule,
-
-    MatButtonModule,
+    //Material Angular
+    MaterialModule,
   ],
   providers: [SpiralService],
   bootstrap: [AppComponent],
