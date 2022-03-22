@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div class="body">
+  <div class="login">
+
+    <mat-spinner diameter="50" class="spinner" *ngIf="loading"></mat-spinner>
+
+    <form [formGroup]="form" (ngSubmit)="ingresar()" *ngIf="!loading" >
+      <img src="./assets/Imgs/waterfall.png" width="50%">
+      <h1>Login</h1>
+      <mat-form-field appearance="fill" class="ancho">
+        <mat-label>Usuario</mat-label>
+        <input type="text" matInput placeholder="usuario@server.com" formControlName="user" >
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="ancho">
+        <mat-label>Contraseña</mat-label>
+        <input type="password" matInput placeholder="********" formControlName="password" >
+      </mat-form-field>
+      <br>
+      <button type="submit" mat-flat-button color="primary" class="ancho button" [disabled]="!form.valid">Ingresar</button>
+    </form>
+  </div>
+</div>

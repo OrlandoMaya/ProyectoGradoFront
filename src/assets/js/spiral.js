@@ -13,7 +13,7 @@ var MAX_OFFSET = 400;
 var SPACING = 4;
 var POINTS = MAX_OFFSET / SPACING;
 var PEAK = MAX_OFFSET * 0.25;
-var POINTS_PER_LAP = 6;
+var POINTS_PER_LAP = 15;
 var SHADOW_STRENGTH = 6;
 
 setup();
@@ -52,8 +52,8 @@ function render() {
     cy = height / 2;
 
   context.globalCompositeOperation = "lighter";
-  context.strokeStyle = "#fff";
-  context.shadowColor = "#fff";
+  context.strokeStyle = "#3bf";
+  context.shadowColor = "#3ff";
   context.lineWidth = 2;
   context.beginPath();
 
@@ -61,7 +61,7 @@ function render() {
     var value = i * SPACING + (time % SPACING);
 
     var ax = Math.sin(value / POINTS_PER_LAP) * Math.PI,
-      ay = Math.cos(value / POINTS_PER_LAP) * Math.PI;
+      ay = Math.tanh(value / POINTS_PER_LAP) * Math.PI;
 
     (x = ax * value), (y = ay * value * 0.35);
 
