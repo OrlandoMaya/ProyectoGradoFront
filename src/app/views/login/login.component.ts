@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   loading: boolean = false;
 
-  constructor(private lg: FormBuilder, private _snackBar: MatSnackBar) {
+  constructor(private lg: FormBuilder, private _snackBar: MatSnackBar, private router:Router) {
     this.form = lg.group({
       user: ['', Validators.required],
       password: ['', Validators.required],
@@ -47,7 +48,7 @@ export class LoginComponent implements OnInit {
     //Cargar dashboard
     this.loading = true;
     setTimeout(() => {
-      this.loading = false;
-    }, 1500);
+      this.router.navigate(["dashboard"])
+    }, 500);
   }
 }

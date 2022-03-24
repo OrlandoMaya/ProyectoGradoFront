@@ -9,13 +9,14 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'map', component: MapComponent },
   { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path:'404', component: Error404Component},
-  { path: '**', redirectTo: '404'}
+  { path: '', redirectTo: 'login', pathMatch: 'full' },//login
+  { path: '404', component: Error404Component },
+  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(x => x.DashboardModule) },
+  { path: '**', redirectTo: '404' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
