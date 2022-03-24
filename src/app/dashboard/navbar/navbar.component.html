@@ -1,1 +1,11 @@
-<p>navbar works!</p>
+<mat-toolbar color="primary">
+  <span>Usuarios</span>
+  <span class="example-spacer"></span>
+  <button [routerLink]="['/dashboard']" mat-button color="secundary">Dashboard</button>
+  <button [routerLink]="['/dashboard/usuarios']" mat-button color="secundary">Usuarios</button>
+  <button [routerLink]="['/dashboard/reportes']" mat-button color="secundary">Reportes</button>
+  <span class="example-spacer"></span>
+  <button routerLink="./logout" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
