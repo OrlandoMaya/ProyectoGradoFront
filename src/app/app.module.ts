@@ -7,8 +7,6 @@ import { IMqttMessage, MqttModule, IMqttServiceOptions } from 'ngx-mqtt';
 import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { MapComponent } from './views/map/map.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { Error404Component } from './views/error404/error404.component';
@@ -31,8 +29,6 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     HomeComponent,
     LoginComponent,
     MapComponent,
-    SidebarComponent,
-    NavbarComponent,
     Error404Component,
   ],
   imports: [
