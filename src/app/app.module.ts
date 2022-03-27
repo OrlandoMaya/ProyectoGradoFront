@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Error404Component } from './views/error404/error404.component';
 import { SpiralService } from './spiral.service';
 import { MaterialModule } from './material/material.module';
+import { AuthInterceptorService } from './services/interceptors/authorization-interceptor';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   hostname: 'localhost',
@@ -36,10 +38,16 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     AppRoutingModule,
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
     BrowserAnimationsModule,
+    HttpClientModule,
     //Material Angular
     MaterialModule,
   ],
-  providers: [SpiralService],
+  providers: [SpiralService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

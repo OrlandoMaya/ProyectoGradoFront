@@ -1,3 +1,5 @@
+import { Usuario } from './../../models/usuario.model';
+import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -12,9 +14,9 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   loading: boolean = false;
 
-  constructor(private lg: FormBuilder, private _snackBar: MatSnackBar, private router:Router) {
+  constructor(private  _userService:UserService,private lg: FormBuilder, private _snackBar: MatSnackBar, private router:Router) {
     this.form = lg.group({
-      user: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
@@ -22,18 +24,24 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void { }
 
   ingresar() {
-    const usuario = this.form.value.user;
-    const password = this.form.value.password;
+    const {email , password}= this.form.value
 
-    if (usuario == '0' && password == '0') {
-      this.fakeLoading();
-      this.form.reset();
-    } else {
-      this.error();
-      this.form.reset();
-    }
+    // if (email == '0' && password == '0') {
+    //   this.fakeLoading();
+    //   this.form.reset();
+    // } else {
+    //   this.error();
+    //   this.form.reset();
+    // }
 
-    console.log(usuario, password);
+    this._userService.login({email,password}).subscribe((resp:any)=>{
+      console.log(resp)
+
+      //TODO:Guardar token en localstorage
+    })
+    
+
+    console.log(email, password);
   }
 
   error() {
