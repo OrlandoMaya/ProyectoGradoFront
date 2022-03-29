@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'map', component: MapComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'logout', redirectTo: 'login', pathMatch: 'full' },//login
   { path: '', redirectTo: 'login', pathMatch: 'full' },//login
   { path: '404', component: Error404Component },
   { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(x => x.DashboardModule) },
