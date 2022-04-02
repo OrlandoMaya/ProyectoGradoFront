@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  rol: any;// ADMIN_ROL', 'TEC_ROL'
+
+  constructor(private ruta: ActivatedRoute) {
+    this.rol = this.ruta.snapshot.paramMap.get('rol');
+   }
 
   ngOnInit(): void {
-    console.log("pasé por dashboard")
+    console.log("pasé por dashboard" + this.rol)
   }
 
 }

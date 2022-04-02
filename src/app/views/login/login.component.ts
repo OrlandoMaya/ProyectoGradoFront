@@ -10,9 +10,11 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
+
 export class LoginComponent implements OnInit {
   form: FormGroup;
   loading: boolean = true;
+  rol: String ="";
 
   constructor(private _userService: UserService, private lg: FormBuilder, private _snackBar: MatSnackBar, private router: Router) {
     this.form = lg.group({
@@ -35,7 +37,7 @@ export class LoginComponent implements OnInit {
     this._userService.login({ email, password }).subscribe((resp: any) => {
       if (resp.token != null) {
         window.localStorage.setItem('login', "true")
-        this.router.navigate(["/dashboard"])
+        this.router.navigate(["/dashboard",resp.user.rol])
       }
     }, (err) => {
       this._snackBar.open('Ususario y/o Contraseña Incorrectas', '0k', {
