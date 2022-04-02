@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'logout', redirectTo: 'login', pathMatch: 'full' },//login
   { path: '', redirectTo: 'login', pathMatch: 'full' },//login
   { path: '404', component: Error404Component },
-  { path: 'dashboard/:rol', loadChildren: () => import('./dashboard/dashboard.module').then(x => x.DashboardModule) },
+  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(x => x.DashboardModule) },
   { path: '**', redirectTo: '404' }
 ];
 

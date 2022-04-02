@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
   }
 
   Logout() {
-    window.localStorage.clear();
+    window.localStorage.removeItem('login');
     console.log(localStorage)
   }
 
