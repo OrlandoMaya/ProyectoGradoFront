@@ -1,0 +1,65 @@
+[
+  {
+    "NivelAgua": 162.4,
+    "VelAgua": 12.0,
+    "Temp": 29.1,
+    "Hum": 95.0,
+    "Prec": 0.0,
+    "Fecha": "2022-04-02",
+    "Hora": "18:56:28"
+  },
+  {
+    "NivelAgua": 83.21,
+    "VelAgua": 14.0,
+    "Temp": 29.1,
+    "Hum": 98.0,
+    "Prec": 0.0,
+    "Fecha": "2022-04-02",
+    "Hora": "19:03:26"
+  },
+  {
+    "NivelAgua": 183.6,
+    "VelAgua": 0.0,
+    "Temp": 29.3,
+    "Hum": 95.0,
+    "Prec": 49.0,
+    "Fecha": "2022-04-02",
+    "Hora": "19:08:03"
+  },
+  {
+    "NivelAgua": 162.4,
+    "VelAgua": 12.0,
+    "Temp": 29.1,
+    "Hum": 95.0,
+    "Prec": 0.0,
+    "Fecha": "2022-04-02",
+    "Hora": "19:13:03"
+  },
+  {
+    "NivelAgua": 83.21,
+    "VelAgua": 14.0,
+    "Temp": 29.1,
+    "Hum": 98.0,
+    "Prec": 0.0,
+    "Fecha": "2022-04-02",
+    "Hora": "19:18:26"
+  },
+  {
+    "NivelAgua": 183.6,
+    "VelAgua": 0.0,
+    "Temp": 29.3,
+    "Hum": 95.0,
+    "Prec": 49.0,
+    "Fecha": "2022-04-02",
+    "Hora": "19:23:03"
+  },
+  {
+    "NivelAgua": -983.57,
+    "VelAgua": 0.0,
+    "Temp": 29.2,
+    "Hum": 95.0,
+    "Prec": 25.0,
+    "Fecha": "2022-04-02",
+    "Hora": "19:28:05"
+  }
+]

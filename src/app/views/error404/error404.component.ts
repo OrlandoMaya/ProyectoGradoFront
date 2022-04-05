@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SpiralService} from './../../spiral.service'
+import {SpiralService} from '../../services/spiral.service'
 
 @Component({
   selector: 'app-error404',

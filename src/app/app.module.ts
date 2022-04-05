@@ -11,7 +11,7 @@ import { MapComponent } from './views/map/map.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { Error404Component } from './views/error404/error404.component';
-import { SpiralService } from './spiral.service';
+import { SpiralService } from './services/spiral.service';
 import { MaterialModule } from './material/material.module';
 import { AuthInterceptorService } from './services/interceptors/authorization-interceptor';
 

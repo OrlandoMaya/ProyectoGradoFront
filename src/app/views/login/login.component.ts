@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
 
     this._userService.login({ email, password }).subscribe((resp: any) => {
       if (resp.token != null) {
-        window.localStorage.setItem('login', "true")
+        window.localStorage.setItem('token', resp.token)
+        console.log(resp)
         this.router.navigate(["/dashboard"])
       }
     }, (err) => {
