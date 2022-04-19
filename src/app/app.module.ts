@@ -9,6 +9,7 @@ import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { MapComponent } from './views/map/map.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CookieService } from 'ngx-cookie-service';
 
 import { Error404Component } from './views/error404/error404.component';
 import { SpiralService } from './services/spiral.service';
@@ -42,7 +43,8 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     //Material Angular
     MaterialModule,
   ],
-  providers: [SpiralService,
+  providers: [CookieService,
+    SpiralService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,

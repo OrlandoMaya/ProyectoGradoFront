@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SesionGuard } from './services/sesion.guard';
 import { Error404Component } from './views/error404/error404.component';
 import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
@@ -12,7 +13,7 @@ const routes: Routes = [
   { path: 'logout', redirectTo: 'login', pathMatch: 'full' },//login
   { path: '', redirectTo: 'login', pathMatch: 'full' },//login
   { path: '404', component: Error404Component },
-  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(x => x.DashboardModule) },
+  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(x => x.DashboardModule), canActivate: [SesionGuard] },
   { path: '**', redirectTo: '404' }
 ];
 
