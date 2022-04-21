@@ -1,5 +1,5 @@
-import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule, Component, ViewChild } from "@angular/core";
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgModule} from "@angular/core";
 
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,11 +11,11 @@ import { LoginComponent } from './views/login/login.component';
 import { MapComponent } from './views/map/map.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
-import { NgApexchartsModule } from 'ng-apexcharts';
 
 import { Error404Component } from './views/error404/error404.component';
 import { SpiralService } from './services/spiral.service';
 import { MaterialModule } from './material/material.module';
+import { ApexModule } from './apex/apex.module';
 import { AuthInterceptorService } from './services/interceptors/authorization-interceptor';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
@@ -42,9 +42,9 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
     BrowserAnimationsModule,
     HttpClientModule,
-    NgApexchartsModule,
     //Material Angular
     MaterialModule,
+    ApexModule
   ],
   providers: [CookieService,
     SpiralService,
@@ -54,7 +54,6 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
       multi: true
     }],
   bootstrap: [AppComponent]
-
 })
 export class AppModule {
 }
