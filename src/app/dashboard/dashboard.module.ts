@@ -8,6 +8,11 @@ import { InicioComponent } from './inicio/inicio.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ReportesComponent } from './reportes/reportes.component';
+import { NivelAguaComponent } from './reportes/nivel-agua/nivel-agua.component';
+import { VelAguaComponent } from './reportes/vel-agua/vel-agua.component';
+import { TempComponent } from './reportes/temp/temp.component';
+import { HumComponent } from './reportes/hum/hum.component';
+import { PrecComponent } from './reportes/prec/prec.component';
 
 
 @NgModule({
@@ -16,7 +21,12 @@ import { ReportesComponent } from './reportes/reportes.component';
     InicioComponent,
     NavbarComponent,
     UsuariosComponent,
-    ReportesComponent
+    ReportesComponent,
+    NivelAguaComponent,
+    VelAguaComponent,
+    TempComponent,
+    HumComponent,
+    PrecComponent
   ],
   imports: [
     CommonModule,

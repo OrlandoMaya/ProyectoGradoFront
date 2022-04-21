@@ -1,5 +1,6 @@
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, Component, ViewChild } from "@angular/core";
+
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +11,7 @@ import { LoginComponent } from './views/login/login.component';
 import { MapComponent } from './views/map/map.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 import { Error404Component } from './views/error404/error404.component';
 import { SpiralService } from './services/spiral.service';
@@ -40,6 +42,7 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
     BrowserAnimationsModule,
     HttpClientModule,
+    NgApexchartsModule,
     //Material Angular
     MaterialModule,
   ],
@@ -50,6 +53,8 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
       useClass: AuthInterceptorService,
       multi: true
     }],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
+
 })
-export class AppModule {}
+export class AppModule {
+}
