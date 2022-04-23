@@ -14,4 +14,8 @@ export class UserService {
   login(user:any):Observable<any>{
     return this.http.post<any>(`${environment.apiUrl}usuario/login`,user)
   }
+
+  eliminar(user:any):Observable<any>{
+    return this.http.delete<any>(`${environment.apiUrl}usuario`,user)
+  }
 }
