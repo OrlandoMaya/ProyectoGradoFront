@@ -9,6 +9,13 @@ export class ReportesComponent implements OnInit {
 
   constructor() { }
 
+  H = true;
+  N = true;
+  P = true;
+  T = true
+  V = true;
+
+
   ngOnInit(): void {
   }
 

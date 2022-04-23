@@ -1,8 +1,12 @@
-<p>reportes works!</p>
-<div>
-<app-hum class="chart" ></app-hum>
-<app-nivel-agua class="chart"></app-nivel-agua>
-<app-prec class="chart"></app-prec>
-<app-temp class="chart"></app-temp>
-<app-vel-agua class="chart"></app-vel-agua>
+<div style="justify-content: center; display: flex; width: 100%;">
+<mat-slide-toggle [(ngModel)]="H" color="primary">Humedad</mat-slide-toggle>
+  <mat-slide-toggle [(ngModel)]="N" color="primary">Nivel del agua</mat-slide-toggle>
+  <mat-slide-toggle [(ngModel)]="P" color="primary">Precipitaciones</mat-slide-toggle>
+  <mat-slide-toggle [(ngModel)]="T" color="primary">Temperatura</mat-slide-toggle>
+  <mat-slide-toggle [(ngModel)]="V" color="primary">Velocidad del agua</mat-slide-toggle>
 </div>
+<app-hum class="chart" *ngIf="H"></app-hum>
+<app-nivel-agua class="chart" *ngIf="N"></app-nivel-agua>
+<app-prec class="chart" *ngIf="P"></app-prec>
+<app-temp class="chart" *ngIf="T"></app-temp>
+<app-vel-agua class="chart" *ngIf="V"></app-vel-agua>

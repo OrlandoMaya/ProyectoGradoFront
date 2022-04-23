@@ -1,12 +1,18 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
 .chart {
   width: 33%;
   display: inline-block;
 }
+
+mat-slide-toggle {
+  margin: 8px 0;
+}
+
 @media screen and (max-width: 768px) {
   .chart{
-      width: 100%;
+    width: 100%;
   }
 }
