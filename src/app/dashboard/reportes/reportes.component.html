@@ -1,12 +1,68 @@
-<div style="justify-content: center; display: flex; width: 100%;">
-<mat-slide-toggle [(ngModel)]="H" color="primary">Humedad</mat-slide-toggle>
-  <mat-slide-toggle [(ngModel)]="N" color="primary">Nivel del agua</mat-slide-toggle>
-  <mat-slide-toggle [(ngModel)]="P" color="primary">Precipitaciones</mat-slide-toggle>
-  <mat-slide-toggle [(ngModel)]="T" color="primary">Temperatura</mat-slide-toggle>
-  <mat-slide-toggle [(ngModel)]="V" color="primary">Velocidad del agua</mat-slide-toggle>
+<div class="tab-container">
+  <div class="flex-grid">
+
+    <div *ngIf="!(H&&N&&P&&T&&V)" class="demo-thumb thumbnail dropshadow">
+      <div *ngIf="!H" class="demo-thumb-text">
+        <mat-slide-toggle [(ngModel)]="H" color="primary">Humedad</mat-slide-toggle>
+      </div>
+      <div  *ngIf="!N" class="demo-thumb-text">
+        <mat-slide-toggle [(ngModel)]="N" color="primary">Nivel del agua</mat-slide-toggle>
+      </div>
+      <div  *ngIf="!P" class="demo-thumb-text">
+        <mat-slide-toggle [(ngModel)]="P" color="primary">Precipitaciones</mat-slide-toggle>
+      </div>
+      <div  *ngIf="!T" class="demo-thumb-text">
+        <mat-slide-toggle [(ngModel)]="T" color="primary">Temperatura</mat-slide-toggle>
+      </div>
+      <div  *ngIf="!V" class="demo-thumb-text">
+        <mat-slide-toggle [(ngModel)]="V" color="primary">Velocidad del agua</mat-slide-toggle>
+      </div>
+    </div>
+
+    <div *ngIf="H" class="demo-thumb thumbnail dropshadow">
+      <div class="demo-thumb-text">
+        <mat-slide-toggle [(ngModel)]="H" color="primary">Humedad</mat-slide-toggle>
+      </div>
+      <div *ngIf="H">
+        <app-hum></app-hum>
+      </div>
+    </div>
+
+    <div *ngIf="N"  class="demo-thumb thumbnail dropshadow">
+      <div class="demo-thumb-text">
+        <mat-slide-toggle [(ngModel)]="N" color="primary">Nivel del agua</mat-slide-toggle>
+      </div>
+      <div *ngIf="N">
+        <app-nivel-agua></app-nivel-agua>
+      </div>
+    </div>
+
+    <div *ngIf="P"  class="demo-thumb thumbnail dropshadow">
+      <div class="demo-thumb-text">
+        <mat-slide-toggle [(ngModel)]="P" color="primary">Precipitaciones</mat-slide-toggle>
+      </div>
+      <div *ngIf="P">
+        <app-prec></app-prec>
+      </div>
+    </div>
+
+    <div *ngIf="T"  class="demo-thumb thumbnail dropshadow">
+      <div class="demo-thumb-text">
+        <mat-slide-toggle [(ngModel)]="T" color="primary">Temperatura</mat-slide-toggle>
+      </div>
+      <div *ngIf="T">
+        <app-temp></app-temp>
+      </div>
+    </div>
+
+    <div *ngIf="V"  class="demo-thumb thumbnail dropshadow">
+      <div class="demo-thumb-text">
+        <mat-slide-toggle [(ngModel)]="V" color="primary">Velocidad del agua</mat-slide-toggle>
+      </div>
+      <div *ngIf="V">
+        <app-vel-agua></app-vel-agua>
+      </div>
+    </div>
+
+  </div>
 </div>
-<app-hum class="chart" *ngIf="H"></app-hum>
-<app-nivel-agua class="chart" *ngIf="N"></app-nivel-agua>
-<app-prec class="chart" *ngIf="P"></app-prec>
-<app-temp class="chart" *ngIf="T"></app-temp>
-<app-vel-agua class="chart" *ngIf="V"></app-vel-agua>
