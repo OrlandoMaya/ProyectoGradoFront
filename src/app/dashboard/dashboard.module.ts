@@ -14,6 +14,8 @@ import { VelAguaComponent } from './reportes/vel-agua/vel-agua.component';
 import { TempComponent } from './reportes/temp/temp.component';
 import { HumComponent } from './reportes/hum/hum.component';
 import { PrecComponent } from './reportes/prec/prec.component';
+import { SidevarComponent } from './sidevar/sidevar.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { PrecComponent } from './reportes/prec/prec.component';
     VelAguaComponent,
     TempComponent,
     HumComponent,
-    PrecComponent
+    PrecComponent,
+    SidevarComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

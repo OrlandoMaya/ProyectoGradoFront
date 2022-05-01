@@ -11,6 +11,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+
+
 
 
 @NgModule({
@@ -28,6 +34,10 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatIconModule,
     MatSlideToggleModule,
     FormsModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatListModule,
   ],
   exports: [
     CommonModule,
@@ -42,6 +52,10 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatIconModule,
     MatSlideToggleModule,
     FormsModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatListModule,
   ]
 })
 export class MaterialModule { }
