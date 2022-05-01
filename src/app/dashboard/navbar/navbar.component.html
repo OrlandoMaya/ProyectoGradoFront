@@ -1,5 +1,5 @@
-<mat-toolbar color="primary">
-  <span>Usuarios</span>
+<mat-toolbar>
+  <span >Flowriver</span>
   <span class="example-spacer"></span>
 
 
@@ -11,14 +11,8 @@
     <mat-icon>settings</mat-icon>
   </button>
 
-  <button mat-button [matMenuTriggerFor]="menu">
-    <mat-icon>person_outline</mat-icon>
+  <button mat-button  (click)="Logout()">
+    <mat-icon>logout</mat-icon>
   </button>
-  <mat-menu #menu="matMenu">
-    <button (click)="Logout()" mat-menu-item>
-      <mat-icon>logout</mat-icon>
-      Sign out
-    </button>
-  </mat-menu>
 
 </mat-toolbar>
