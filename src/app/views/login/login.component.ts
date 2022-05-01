@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     if (this.cookieService.check('token')) {
       this.router.navigate(["/dashboard"])
+      this.cookieService.get('user')
     } else {
       this.loading = false;
     }
@@ -35,6 +36,10 @@ export class LoginComponent implements OnInit {
 
     this._userService.login({ email, password }).subscribe((resp: any) => {
       this.cookieService.set('token', resp.token, 1, '/')
+      this.cookieService.set('correo', resp.user.correo, 1, '/')
+      this.cookieService.set('nombre', resp.user.nombre, 1, '/')
+      this.cookieService.set('rol', resp.user.rol, 1, '/')
+      this.cookieService.set('uid', resp.user.uid, 1, '/')
       this.router.navigate(["/dashboard"])
     }, (err) => {
       this._snackBar.open('Usuario y/o Contraseña Incorrectas', '0k', {

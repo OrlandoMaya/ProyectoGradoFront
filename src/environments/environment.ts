@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl:'http://flowriver.online:3000/api/'
+  apiUrl:'https://flowriver.online/api/'
 };
 
 /*

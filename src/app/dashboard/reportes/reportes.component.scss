@@ -43,3 +43,16 @@ div {
     width: 100%;
   }
 }
+
+ul {
+  max-width:800px;
+  margin: 0 50px;
+}
+
+ul li {
+  float: left;
+}
+
+ul li img {
+  margin:5px;
+}

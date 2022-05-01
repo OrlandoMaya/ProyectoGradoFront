@@ -1,12 +1,24 @@
 <mat-toolbar color="primary">
   <span>Usuarios</span>
   <span class="example-spacer"></span>
-  <button [routerLink]="['/dashboard']" mat-button color="secundary">Dashboard</button>
-  <button [routerLink]="['/dashboard/usuarios']" mat-button color="secundary">Usuarios</button>
-  <button [routerLink]="['/dashboard/reportes']" mat-button color="secundary">Reportes</button>
-  <span class="example-spacer"></span>
-  <button (click)="Logout()" mat-icon-button class="example-icon"
-    aria-label="Example icon-button with share icon">
-    <mat-icon>logout</mat-icon>
+
+
+  <button mat-icon-button>
+    <mat-icon>help_outline</mat-icon>
   </button>
+
+  <button mat-icon-button>
+    <mat-icon>settings</mat-icon>
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>person_outline</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button (click)="Logout()" mat-menu-item>
+      <mat-icon>logout</mat-icon>
+      Sign out
+    </button>
+  </mat-menu>
+
 </mat-toolbar>
