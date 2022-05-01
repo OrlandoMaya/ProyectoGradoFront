@@ -15,6 +15,7 @@ import { TempComponent } from './reportes/temp/temp.component';
 import { HumComponent } from './reportes/hum/hum.component';
 import { PrecComponent } from './reportes/prec/prec.component';
 import { SidevarComponent } from './sidevar/sidevar.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { SidevarComponent } from './sidevar/sidevar.component';
     TempComponent,
     HumComponent,
     PrecComponent,
-    SidevarComponent
+    SidevarComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
