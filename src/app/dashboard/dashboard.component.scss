@@ -6,10 +6,13 @@
 
 mat-drawer {
   width: 20%;
+  background-image:url("../../assets/Imgs/sidevar.svg") ;
+  background-size:cover;
 }
 
 mat-drawer-container {
   height: 100%;
+  background-color: rgba(#111, 1);
 }
 
 mat-drawer-content {
@@ -21,9 +24,4 @@ mat-drawer-content {
   mat-drawer {
     width: 32%;
   }
-}
-
-.sidevar{
-  background-image:url("../../assets/Imgs/sidevar.svg") ;
-  background-size:cover;
 }

@@ -63,7 +63,12 @@ export class PrecComponent implements OnInit {
 
       title: {
         text: "Precipitaciones",
-        align: "left"
+        align: 'center',
+        style: {
+          fontSize:  '18px',
+          fontWeight:  'bold',
+          color:  'rgba(255, 255, 255, 0.8)'
+        },
       },
       labels: [
         "2018-09-19T00:00:00.000Z",
