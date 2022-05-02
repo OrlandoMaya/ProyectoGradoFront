@@ -3,6 +3,9 @@
   justify-content: center;
   height: 100%;
   align-items: center;
+  background-color: #fff;
+  background-image: url('../../../assets/Imgs/login.svg');
+  background-size: cover;
 }
 
 .login{
@@ -21,4 +24,8 @@
 
 .spinner{
   margin: 0 auto
+}
+
+*{
+  color: rgba(255, 255, 255, 0.9);
 }

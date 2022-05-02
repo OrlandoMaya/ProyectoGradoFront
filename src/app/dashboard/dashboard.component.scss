@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-drawer {
+  width: 20%;
+  background-image:url("../../assets/Imgs/sidevar.svg") ;
+  background-size:cover;
+}
+
+mat-drawer-container {
+  height: 100%;
+  background-color: rgba(#111, 1);
+}
+
+mat-drawer-content {
+  padding: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+  mat-drawer {
+    width: 32%;
+  }
+}
