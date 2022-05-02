@@ -1,11 +1,11 @@
 <mat-nav-list>
   <div class="profile-card">
-      <div class="header">
-          <h2>{{nombre}}</h2>
-          <h4>{{correo}}</h4>
-      </div>
-      <a class="boton"></a>
-      <img src="./assets/Imgs/riverBackground.jpg">
+    <div class="header">
+      <h2>{{nombre}}</h2>
+      <h4>{{correo}}</h4>
+    </div>
+    <a class="boton"></a>
+    <img src="./assets/Imgs/riverBackground.jpg">
 
   </div>
 
@@ -13,23 +13,26 @@
 
   <h4 matSubheader>Paginas</h4>
 
-  <a mat-list-item [routerLink]="['/dashboard']">Dashboard</a>
-  <a mat-list-item [routerLink]="['/dashboard/usuarios']">Usuarios</a>
-  <a mat-list-item [routerLink]="['/dashboard/reportes']">Reportes</a>
+  <a mat-list-item [routerLink]="['/dashboard']">
+    <span class="material-icons">
+      summarize
+    </span>
+    Dashboard</a>
+  <a mat-list-item [routerLink]="['/dashboard/usuarios']">
+    <span class="material-icons">
+      account_circle
+    </span>
+    Usuarios</a>
+  <a mat-list-item [routerLink]="['/dashboard/reportes']">
+    <span class="material-icons">
+      dashboard
+    </span>Reportes</a>
 
   <mat-divider></mat-divider>
-<!--
-  <h2 matSubheader>Herramientas</h2>
 
   <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
-      <mat-icon>import_contacts</mat-icon>
-      Contacts
+    <mat-icon>engineering</mat-icon>
+    Creadores
   </a>
-
-  <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
-      <mat-icon>contact_phone</mat-icon>
-      Leads
-  </a>
--->
 
 </mat-nav-list>

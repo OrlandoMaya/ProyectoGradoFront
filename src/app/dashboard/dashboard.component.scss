@@ -25,3 +25,13 @@ mat-drawer-content {
     width: 32%;
   }
 }
+
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color:#3bf;
+  color: white;
+  text-align: end;
+  z-index: 1;
+}
