@@ -67,7 +67,7 @@ export class PrecComponent implements OnInit {
         style: {
           fontSize:  '18px',
           fontWeight:  'bold',
-          color:  'rgba(255, 255, 255, 0.8)'
+          //color:  'rgba(255, 255, 255, 0.8)'
         },
       },
       labels: [
