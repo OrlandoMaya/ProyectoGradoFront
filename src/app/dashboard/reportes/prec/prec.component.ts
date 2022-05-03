@@ -48,7 +48,7 @@ export class PrecComponent implements OnInit {
         }
       ],
       chart: {
-        type: "bar",
+        type: "area",
         height: 350,
         zoom: {
           enabled: false

@@ -50,7 +50,7 @@ export class TempComponent implements OnInit {
         }
       ],
       chart: {
-        type: "bar",
+        type: "line",
         height: 350,
         zoom: {
           enabled: false
@@ -62,7 +62,6 @@ export class TempComponent implements OnInit {
       stroke: {
         curve: "smooth"
       },
-
       title: {
         text: "Temperatura",
         align: 'center',
@@ -81,6 +80,27 @@ export class TempComponent implements OnInit {
         "2018-09-19T05:30:00.000Z",
         "2018-09-19T06:30:00.000Z"
       ],
+      fill: {
+        type: "gradient",
+        gradient: {
+          shade: "dark",
+          gradientToColors: ["#b3fbff","#8cffd9"],
+          shadeIntensity: 1,
+          type: "horizontal",
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [0, 100, 100, 100]
+        }
+      },
+      markers: {
+        size: 4,
+        colors: ["#5BD1D7", "#00E396"],
+        strokeColors: "#fff",
+        strokeWidth: 2,
+        hover: {
+          size: 7
+        }
+      },
       xaxis: {
         type: "datetime"
       },

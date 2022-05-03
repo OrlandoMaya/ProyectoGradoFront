@@ -49,7 +49,7 @@ export class VelAguaComponent implements OnInit {
         }
       ],
       chart: {
-        type: "area",
+        type: "line",
         height: 350,
         zoom: {
           enabled: false
@@ -59,7 +59,9 @@ export class VelAguaComponent implements OnInit {
         enabled: false
       },
       stroke: {
-        curve: "smooth"
+        width: 5,
+        curve: "smooth",
+        dashArray: 8
       },
 
       title: {

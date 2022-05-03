@@ -48,7 +48,7 @@ export class HumComponent implements OnInit {
         }
       ],
       chart: {
-        type: "area",
+        type: "bar",
         height: 350,
         zoom: {
           enabled: false
