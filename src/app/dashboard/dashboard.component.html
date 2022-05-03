@@ -1,13 +1,21 @@
-<app-navbar></app-navbar>
+<div class="head">
+  <app-navbar></app-navbar>
+</div>
+
 <mat-drawer-container>
-    <mat-drawer mode="side" [opened]="sideBarOpen">
-      <div>
+
+  <mat-drawer class="side" mode="side" [opened]="sideBarOpen">
+
+    <div>
       <app-sidevar></app-sidevar>
     </div>
-    </mat-drawer>
-    <mat-drawer-content>
-        <router-outlet></router-outlet>
-    </mat-drawer-content>
+
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+
 </mat-drawer-container>
 
 <footer>Made by @LotusZaheer & @OrlandoMR</footer>

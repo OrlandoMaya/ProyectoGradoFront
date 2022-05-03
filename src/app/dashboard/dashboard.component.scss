@@ -6,19 +6,16 @@
 
 mat-drawer {
   width: 20%;
-  background-image:url("../../assets/Imgs/sidevar.svg") ;
-  background-size:cover;
+  background-color: rgba(#000, 0.9);
 }
 
 mat-drawer-container {
   height: 100%;
-  background-color: rgba(#111, 0);
 }
 
 mat-drawer-content {
   padding: 20px;
 }
-
 
 @media screen and (max-width: 768px) {
   mat-drawer {
@@ -26,12 +23,21 @@ mat-drawer-content {
   }
 }
 
-footer{
+footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color:#3bf;
+  background-color: #3bf;
   color: white;
   text-align: end;
   z-index: 1;
+}
+
+.side {
+  background-image: url("../../assets/Imgs/sidevar.svg");
+  background-size: cover;
+}
+
+.head {
+  background-color: rgba(#000, 0.9);
 }
