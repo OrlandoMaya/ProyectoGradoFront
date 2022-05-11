@@ -1,1 +1,22 @@
-<p>home works!</p>
+<div class="outerContainer">
+  <div class="headerContainer">
+    <img class="logo" src="/assets/Imgs/logo.svg" alt="" />
+  </div>
+  <div class="centerContainer">
+    <p class="textDescription">
+      <span class="title">Flowriver</span> es una iniciativa que busca ayudar a las personas
+      que viven aledañas a rios y son propensos a una catastrofe ambiental. Mira
+      en tiempo real las condiciones de los rios y preparate con antelacion
+      frente a algun peligro inminente
+    </p>
+    <div class="buttons">
+
+        <button type="button" [routerLink]="['/login']" class="button" mat-flat-button color="primary">
+            Login
+        </button>
+        <button type="button" [routerLink]="['/map']" class="button" mat-flat-button color="primary">
+            Ver mapa
+        </button>
+    </div>
+  </div>
+</div>
