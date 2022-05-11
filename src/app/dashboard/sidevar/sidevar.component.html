@@ -1,0 +1,38 @@
+<mat-nav-list>
+  <div class="profile-card">
+    <div class="header">
+      <h2>{{nombre}}</h2>
+      <h4>{{correo}}</h4>
+    </div>
+    <a class="boton"></a>
+    <img src="./assets/Imgs/riverBackground.jpg">
+
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <h4 matSubheader>Paginas</h4>
+
+  <a mat-list-item [routerLink]="['/dashboard']">
+    <span class="material-icons">
+      summarize
+    </span>
+    Dashboard</a>
+  <a mat-list-item [routerLink]="['/dashboard/usuarios']">
+    <span class="material-icons">
+      account_circle
+    </span>
+    Usuarios</a>
+  <a mat-list-item [routerLink]="['/dashboard/reportes']">
+    <span class="material-icons">
+      dashboard
+    </span>Reportes</a>
+
+  <mat-divider></mat-divider>
+<!--
+  <a mat-list-item routerLinkActive="list-item-active">
+    <mat-icon>engineering</mat-icon>
+    Creadores
+  </a>
+-->
+</mat-nav-list>

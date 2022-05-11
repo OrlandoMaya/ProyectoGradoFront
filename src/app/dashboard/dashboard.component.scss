@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-drawer {
+  width: 20%;
+  background-color: rgba(#000, 0.9);
+}
+
+mat-drawer-container {
+  height: 100%;
+}
+
+mat-drawer-content {
+  padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  mat-drawer {
+    width: 32%;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #3bf;
+  color: white;
+  text-align: end;
+  z-index: 1;
+}
+
+.side {
+  background-image: url("../../assets/Imgs/sidevar.svg");
+  background-size: cover;
+}
+
+.head {
+  background-color: rgba(#000, 0.9);
+}
