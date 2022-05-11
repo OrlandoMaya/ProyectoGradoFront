@@ -11,12 +11,12 @@ export class StationService {
 
   constructor(private http:HttpClient) { }
 
-  Get(Estacion:any):Observable<any>{
-    return this.http.get<any>(`${environment.apiUrl}estacion`,Estacion)
+  Get():Observable<any>{
+    return this.http.get<any>(`${environment.apiUrl}estacion`)
   }
 
-  GetId(Estacion:any):Observable<any>{
-    return this.http.get<any>(`${environment.apiUrl}estacion`,Estacion)
+  GetId(id:string):Observable<any>{
+    return this.http.get<any>(`${environment.apiUrl}estacion/${id}`)
   }
 
   New(Estacion:any):Observable<any>{
@@ -27,7 +27,7 @@ export class StationService {
     return this.http.put<any>(`${environment.apiUrl}estacion`,Estacion)
   }
 
-  eliminar(Estacion:any):Observable<any>{
-    return this.http.delete<any>(`${environment.apiUrl}estacion`,Estacion)
+  eliminar(id:string):Observable<any>{
+    return this.http.delete<any>(`${environment.apiUrl}estacion/${id}`)
   }
 }
