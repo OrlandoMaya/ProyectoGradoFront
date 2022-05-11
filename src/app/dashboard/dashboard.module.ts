@@ -14,7 +14,7 @@ import { VelAguaComponent } from './reportes/vel-agua/vel-agua.component';
 import { TempComponent } from './reportes/temp/temp.component';
 import { HumComponent } from './reportes/hum/hum.component';
 import { PrecComponent } from './reportes/prec/prec.component';
-import { SidevarComponent } from './sidevar/sidevar.component';
+import { sidebarComponent } from './sidebar/sidebar.component';
 import { MapsComponent } from './reportes/maps/maps.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 
@@ -31,7 +31,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
     TempComponent,
     HumComponent,
     PrecComponent,
-    SidevarComponent,
+    sidebarComponent,
     MapsComponent,
   ],
   imports: [
