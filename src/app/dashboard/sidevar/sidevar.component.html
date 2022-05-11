@@ -15,7 +15,7 @@
 
   <a mat-list-item [routerLink]="['/dashboard']">
     <span class="material-icons">
-      summarize
+      dashboard
     </span>
     Dashboard</a>
   <a mat-list-item [routerLink]="['/dashboard/usuarios']">
@@ -23,13 +23,18 @@
       account_circle
     </span>
     Usuarios</a>
+  <a mat-list-item [routerLink]="['/dashboard/estaciones']">
+      <span class="material-icons">
+        dock
+      </span>
+      Estaciones</a>
   <a mat-list-item [routerLink]="['/dashboard/reportes']">
     <span class="material-icons">
-      dashboard
+      analytics
     </span>Reportes</a>
 
   <mat-divider></mat-divider>
-<!--
+  <!--
   <a mat-list-item routerLinkActive="list-item-active">
     <mat-icon>engineering</mat-icon>
     Creadores
