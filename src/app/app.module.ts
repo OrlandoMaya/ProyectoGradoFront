@@ -11,6 +11,7 @@ import { LoginComponent } from './views/login/login.component';
 import { MapComponent } from './views/map/map.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 import { Error404Component } from './views/error404/error404.component';
 import { SpiralService } from './services/spiral.service';
@@ -44,7 +45,8 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     HttpClientModule,
     //Material Angular
     MaterialModule,
-    ApexModule
+    ApexModule,
+    GoogleMapsModule
   ],
   providers: [CookieService,
     SpiralService,

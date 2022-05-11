@@ -49,7 +49,7 @@ export class VelAguaComponent implements OnInit {
         }
       ],
       chart: {
-        type: "area",
+        type: "line",
         height: 350,
         zoom: {
           enabled: false
@@ -59,12 +59,19 @@ export class VelAguaComponent implements OnInit {
         enabled: false
       },
       stroke: {
-        curve: "smooth"
+        width: 5,
+        curve: "smooth",
+        dashArray: 8
       },
 
       title: {
         text: "Velocidad del Agua",
-        align: "left"
+        align: 'center',
+        style: {
+          fontSize:  '18px',
+          fontWeight:  'bold',
+          //color:  'rgba(255, 255, 255, 0.8)'
+        },
       },
       labels: [
         "2018-09-19T00:00:00.000Z",

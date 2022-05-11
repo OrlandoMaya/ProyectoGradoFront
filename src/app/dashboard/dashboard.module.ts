@@ -14,6 +14,9 @@ import { VelAguaComponent } from './reportes/vel-agua/vel-agua.component';
 import { TempComponent } from './reportes/temp/temp.component';
 import { HumComponent } from './reportes/hum/hum.component';
 import { PrecComponent } from './reportes/prec/prec.component';
+import { SidevarComponent } from './sidevar/sidevar.component';
+import { MapsComponent } from './reportes/maps/maps.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 @NgModule({
@@ -27,13 +30,16 @@ import { PrecComponent } from './reportes/prec/prec.component';
     VelAguaComponent,
     TempComponent,
     HumComponent,
-    PrecComponent
+    PrecComponent,
+    SidevarComponent,
+    MapsComponent,
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     MaterialModule,
-    ApexModule
+    ApexModule,
+    GoogleMapsModule,
   ]
 })
 export class DashboardModule { }
