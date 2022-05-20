@@ -17,6 +17,8 @@ import { PrecComponent } from './reportes/prec/prec.component';
 import { SidevarComponent } from './sidevar/sidevar.component';
 import { MapsComponent } from './reportes/maps/maps.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { EstacionesComponent } from './estaciones/estaciones.component';
+import { AddEstacionComponent } from './estaciones/add-estacion/add-estacion.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     PrecComponent,
     SidevarComponent,
     MapsComponent,
+    EstacionesComponent,
+    AddEstacionComponent,
   ],
   imports: [
     CommonModule,

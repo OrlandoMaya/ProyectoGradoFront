@@ -15,7 +15,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select'; 
 
 
 
@@ -24,7 +25,7 @@ import {MatListModule} from '@angular/material/list';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-
+    MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
@@ -38,11 +39,13 @@ import {MatListModule} from '@angular/material/list';
     MatSidenavModule,
     MatDividerModule,
     MatListModule,
+    MatDialogModule
+    
   ],
   exports: [
     CommonModule,
     ReactiveFormsModule,
-
+    MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
@@ -56,6 +59,7 @@ import {MatListModule} from '@angular/material/list';
     MatSidenavModule,
     MatDividerModule,
     MatListModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule { }
