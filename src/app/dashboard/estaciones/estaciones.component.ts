@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { switchMap } from 'rxjs';
+import { Estacion } from 'src/app/models/estacion.model';
+import { CiudadService } from 'src/app/services/ciudad.service';
+import { DepartamentosService } from 'src/app/services/departamentos.service';
+import { EstacionService } from 'src/app/services/estacion.service';
 import { AddEstacionComponent } from './add-estacion/add-estacion.component';
 
 @Component({
@@ -9,9 +14,20 @@ import { AddEstacionComponent } from './add-estacion/add-estacion.component';
 })
 export class EstacionesComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  displayedColumns:string[]=['position',]
+  dataSource!:Estacion[];
+
+  constructor(public dialog: MatDialog, private estacionService:EstacionService, private departamentoService:DepartamentosService,
+    private ciudadService:CiudadService) { }
 
   ngOnInit(): void {
+    const estaciones:any[]=[]
+    // this.estacionService.Get().pipe(
+    //   switchMap((estacionesRes:any[])=>{
+    //     // return this.estacionService.GetUbicacion()
+    //   })
+    // )
+    
   }
 
   openDialog(): void {
@@ -21,8 +37,10 @@ export class EstacionesComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       
-    });
+    }); 
   }
+
+
 
 
 

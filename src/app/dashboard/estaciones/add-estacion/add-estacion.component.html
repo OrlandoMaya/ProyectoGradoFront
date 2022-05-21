@@ -2,14 +2,14 @@
   <div class="headerContainer">
     <h1>Añadir estación</h1>
   </div>
-  <div class="bodyContainer">
+  <div [formGroup]="addStationForm" class="bodyContainer">
     <mat-form-field appearance="outline">
       <mat-label>Nombre</mat-label>
-      <input matInput />
+      <input formControlName="nombre" matInput />
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Estado</mat-label>
-      <mat-select>
+      <mat-select formControlName="estado">
         <mat-option *ngFor="let op of options" [value]="op">
           {{ op }}
         </mat-option>
@@ -17,34 +17,34 @@
     </mat-form-field>
     <mat-form-field appearance="outline">
         <mat-label>Latitud</mat-label>
-        <input matInput />
+        <input formControlName="latitud" matInput />
     </mat-form-field>
     <mat-form-field appearance="outline">
         <mat-label>Longitud</mat-label>
-        <input matInput />
+        <input formControlName="longitud" matInput />
     </mat-form-field>
     <mat-form-field appearance="outline">
         <mat-label>Departamento</mat-label>
-        <mat-select>
-            <mat-option *ngFor="let op of departamentos" [value]="departamentos">
-              {{ op }}
+        <mat-select formControlName="idDepartamento">
+            <mat-option *ngFor="let op of departamentos" [value]="op.uid">
+              {{ op.nombre }}
             </mat-option>
           </mat-select>
     </mat-form-field>
-    <mat-form-field appearance="outline">
+    <mat-form-field  appearance="outline">
         <mat-label>Ciudad</mat-label>
-        <mat-select>
-            <mat-option *ngFor="let op of ciudades" [value]="ciudades">
-              {{ op }}
+        <mat-select formControlName="idCiudad" [disabled]="!addStationForm.value.idDepartamento">
+            <mat-option *ngFor="let op of ciudades" [value]="op.uid">
+              {{ op.nombre }}
             </mat-option>
           </mat-select>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Topic</mat-label>
-      <input matInput />
+      <input formControlName="topic" matInput />
     </mat-form-field>
     
-    <button class="sendButton" mat-flat-button color="primary">Enviar</button>
+    <button class="sendButton" (click)="addStation()" mat-flat-button color="primary">Enviar</button>
   </div>
 </div>
 

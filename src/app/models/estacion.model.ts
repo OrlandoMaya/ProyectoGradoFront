@@ -1,5 +1,5 @@
 export interface Estacion{
-    id:string;
+    uid:string;
     nombre:string;
     idUbicacion:string;
     inicio:Date;

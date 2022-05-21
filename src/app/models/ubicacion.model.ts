@@ -1,5 +1,5 @@
 export interface Estacion{
-    id:string;
+    uid:string;
     latitud:string;
     longitud:string;
     idCiudad:string;

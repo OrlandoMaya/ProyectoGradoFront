@@ -1,5 +1,5 @@
 export interface Mantenimiento{
-    id:string;
+    uid:string;
     fecha:Date;
     observaciones:string;
     idEstacion:number;

@@ -11,22 +11,22 @@ export class CiudadService {
   constructor(private http:HttpClient) { }
 
   Get():Observable<any>{
-    return this.http.get<any>(`${environment.apiUrl}usuario`)
+    return this.http.get<any>(`${environment.apiUrl}ciudad`)
   }
 
-  GetId():Observable<any>{
-    return this.http.get<any>(`${environment.apiUrl}usuario`)
+  GetId(idCiudad:string):Observable<any>{
+    return this.http.get<any>(`${environment.apiUrl}ciudad/${idCiudad}`)
   }
 
   New(user:any):Observable<any>{
-    return this.http.post<any>(`${environment.apiUrl}usuario`,user)
+    return this.http.post<any>(`${environment.apiUrl}ciudad`,user)
   }
 
-  Actualizar(user:any):Observable<any>{
-    return this.http.put<any>(`${environment.apiUrl}usuario`,user)
-  }
+  // Actualizar(user:any):Observable<any>{
+  //   return this.http.put<any>(`${environment.apiUrl}ciudad`,user)
+  // }
 
   eliminar():Observable<any>{
-    return this.http.delete<any>(`${environment.apiUrl}usuario`)
+    return this.http.delete<any>(`${environment.apiUrl}ciudad`)
   }
 }
