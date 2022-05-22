@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({
-  selector: 'app-sidevar',
-  templateUrl: './sidevar.component.html',
-  styleUrls: ['./sidevar.component.scss']
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.scss']
 })
-export class SidevarComponent implements OnInit {
+export class sidebarComponent implements OnInit {
 
   correo = this.cookieService.get('correo');
   nombre = this.cookieService.get('nombre')

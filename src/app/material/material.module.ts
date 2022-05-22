@@ -41,8 +41,8 @@ import {MatTableModule} from '@angular/material/table';
     MatDividerModule,
     MatListModule,
     MatDialogModule,
-    MatTableModule
-    
+    MatSelectModule,
+    MatTableModule,
   ],
   exports: [
     CommonModule,
@@ -62,7 +62,8 @@ import {MatTableModule} from '@angular/material/table';
     MatDividerModule,
     MatListModule,
     MatDialogModule,
-    MatTableModule
+    MatSelectModule,
+    MatTableModule,
   ]
 })
 export class MaterialModule { }

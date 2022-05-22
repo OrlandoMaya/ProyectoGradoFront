@@ -11,12 +11,12 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
-  Get(user:any):Observable<any>{
-    return this.http.get<any>(`${environment.apiUrl}usuario`,user)
+  Get():Observable<any>{
+    return this.http.get<any>(`${environment.apiUrl}usuario`)
   }
 
-  GetId(user:any):Observable<any>{
-    return this.http.get<any>(`${environment.apiUrl}usuario`,user)
+  GetId(id:string):Observable<any>{
+    return this.http.get<any>(`${environment.apiUrl}usuario/${id}`)
   }
 
   New(user:any):Observable<any>{
@@ -31,7 +31,7 @@ export class UserService {
     return this.http.post<any>(`${environment.apiUrl}usuario/login`,user)
   }
 
-  eliminar(user:any):Observable<any>{
-    return this.http.delete<any>(`${environment.apiUrl}usuario`,user)
+  eliminar(id:string):Observable<any>{
+    return this.http.delete<any>(`${environment.apiUrl}usuario/${id}`)
   }
 }
