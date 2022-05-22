@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from "@angular/core";
 import { FormControl } from '@angular/forms';
 import { LocationService } from 'src/app/services/location.service';
 import { Ubicacion } from 'src/app/models/ubicacion.model';
-import { last } from "rxjs";
 import { Estacion } from "src/app/models/estacion.model";
 
 
