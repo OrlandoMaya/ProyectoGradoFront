@@ -17,6 +17,7 @@ export class ReportesComponent implements OnInit {
 
   StationList!: Estacion[];//arreglar despues
 
+
   ngOnInit(): void {
     this._station.Get().subscribe(value => {
       console.log(value.estaciones)
