@@ -11,12 +11,12 @@ export class LocationService {
 
   constructor(private http:HttpClient) { }
 
-  Get(Ubicacion:any):Observable<any>{
-    return this.http.get<any>(`${environment.apiUrl}ubicacion`,Ubicacion)
+  Get():Observable<any>{
+    return this.http.get<any>(`${environment.apiUrl}ubicacion`)
   }
 
-  GetId(Ubicacion:any):Observable<any>{
-    return this.http.get<any>(`${environment.apiUrl}ubicacion`,Ubicacion)
+  GetId(id:string):Observable<any>{
+    return this.http.get<any>(`${environment.apiUrl}ubicacion/${id}`)
   }
 
   New(Ubicacion:any):Observable<any>{
@@ -27,7 +27,7 @@ export class LocationService {
     return this.http.put<any>(`${environment.apiUrl}ubicacion`,Ubicacion)
   }
 
-  eliminar(Ubicacion:any):Observable<any>{
-    return this.http.delete<any>(`${environment.apiUrl}ubicacion`,Ubicacion)
+  eliminar(id:string):Observable<any>{
+    return this.http.delete<any>(`${environment.apiUrl}ubicacion/${id}`)
   }
 }

@@ -36,6 +36,7 @@ export class NivelAguaComponent implements OnInit {
 
   @Input()  item!: any[];
 
+
   public chartOptions: Partial<ChartOptions> | any;
 
   constructor() {

@@ -16,6 +16,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatSelectModule} from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table'
 
 
 
@@ -41,6 +42,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatDividerModule,
     MatListModule,
     MatSelectModule,
+    MatTableModule,
   ],
   exports: [
     CommonModule,
@@ -60,6 +62,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatDividerModule,
     MatListModule,
     MatSelectModule,
+    MatTableModule,
   ]
 })
 export class MaterialModule { }
