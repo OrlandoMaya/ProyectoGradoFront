@@ -41,7 +41,7 @@ import { MatTableModule } from '@angular/material/table'
     MatSidenavModule,
     MatDividerModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
     MatSelectModule,
     MatTableModule,
   ],
@@ -62,7 +62,7 @@ import { MatTableModule } from '@angular/material/table'
     MatSidenavModule,
     MatDividerModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
     MatSelectModule,
     MatTableModule,
   ]
