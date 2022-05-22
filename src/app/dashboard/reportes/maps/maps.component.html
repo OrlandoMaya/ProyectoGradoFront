@@ -1,12 +1,8 @@
-<google-map height="350" width="100%" [center]="position3" [zoom]="15" >
-  <map-marker
-  [position]="position1"
-  [label]="label1"
-  [title]="title1"
-  ></map-marker>
-  <map-marker
-  [position]="position2"
-  [label]="label2"
-  [title]="title2"
+<google-map height="350" width="100%" [center]="position" [zoom]="7" >
+
+  <map-marker *ngFor="let i of item"
+  [position]="_position(i.idUbicacion)"
+  [label]="i.nombre"
+  [title]="title"
   ></map-marker>
 </google-map>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
 
 import {
@@ -32,9 +32,11 @@ export type ChartOptions = {
 })
 export class TempComponent implements OnInit {
 
+  @Input()  item!: any[];
 
   ngOnInit(): void {
   }
+
   public chartOptions: Partial<ChartOptions> | any;
 
   constructor() {
