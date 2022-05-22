@@ -1,9 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { LocationService } from "src/app/services/location.service";
-import { Ubicacion } from "src/app/models/ubicacion.model";
-import { CookieService } from 'ngx-cookie-service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-maps',
@@ -12,36 +7,33 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class MapsComponent implements OnInit {
 
-  form: FormGroup;
-
-  ngOnInit(): void {
+  title1 = 'gmaps';
+  position1 = {
+    lat: 7.155745,
+    lng: -73.092464
   }
-
-  constructor(private _location: LocationService, private lg: FormBuilder, private cookieService: CookieService) {
-    this.form = lg.group({
-      authorization: [this.cookieService.get('token'), AuthenticatorResponse],
-    });
+  label1 = {
+    color: 'white',
+    text: 'ESP8266-1'
   }
-
-  @Input() item!: any[];
-
-  title = 'gmaps';
+  title2 = 'gmaps';
   position2 = {
     lat: 7.156107,
     lng: -73.088516
   }
-  position3 = {
-    lat: (this.position2.lat),
-    lng: (this.position2.lng),
+  label2 = {
+    color: 'white',
+    text: 'ESP8266-1'
   }
 
-  position() {
-    const Authorization = this.form.value
-    this._location.Get( ).subscribe(value => {
-      let icono = value.ubicacion.map((ubicacion: Ubicacion) => ubicacion.idCiudad);
-      console.log(icono)
-    })
+  position3 = {
+    lat: (this.position1.lat+this.position2.lat)/2,
+    lng: (this.position1.lng+this.position2.lng)/2,
+  }
 
+  constructor() { }
+
+  ngOnInit(): void {
   }
 
 }

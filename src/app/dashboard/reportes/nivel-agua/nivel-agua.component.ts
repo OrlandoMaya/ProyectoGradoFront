@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 import {
   ChartComponent,
@@ -33,10 +33,6 @@ export class NivelAguaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  @Input()  item!: any[];
-
-
   public chartOptions: Partial<ChartOptions> | any;
 
   constructor() {

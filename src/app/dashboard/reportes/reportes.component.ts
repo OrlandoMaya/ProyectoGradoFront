@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Estacion } from 'src/app/models/estacion.model';
-import { FormControl } from '@angular/forms';
-import { StationService } from 'src/app/services/station.service';
 
 @Component({
   selector: 'app-reportes',
@@ -11,20 +8,9 @@ import { StationService } from 'src/app/services/station.service';
 
 export class ReportesComponent implements OnInit {
 
-  constructor(private _station: StationService) { }
-
-  Station = new FormControl(); // va pa'l hijo
-
-  StationList!: Estacion[];//arreglar despues
+  constructor() { }
 
   ngOnInit(): void {
-    this._station.Get().subscribe(value => {
-      this.StationList = value.estaciones.map((estacion: Estacion) => estacion);
-    })
-
-    this.Station.valueChanges.subscribe(values => {
-    })
-
   }
 
 }
