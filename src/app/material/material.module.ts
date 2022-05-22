@@ -16,9 +16,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
-import {MatSelectModule} from '@angular/material/select';
-import { MatTableModule } from '@angular/material/table'
-
+import {MatSelectModule} from '@angular/material/select'; 
+import {MatTableModule} from '@angular/material/table';
 
 
 
