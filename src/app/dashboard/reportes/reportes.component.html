@@ -8,7 +8,7 @@
       </span>
     </mat-select-trigger>
     <!--<mat-option *ngFor="let Station of StationList" [value]="Station.id">{{Station.nombre}}</mat-option>-->
-    <mat-option *ngFor="let Station of ['ago','algoosa','asdadas']" [value]="Station">{{Station}}</mat-option>
+    <mat-option *ngFor="let Station of StationList" [value]="Station">{{Station.nombre}}</mat-option>
     <!--rf 34-->
   </mat-select>
 </mat-form-field>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
+
 
 import {
   ChartComponent,
@@ -31,8 +32,11 @@ export type ChartOptions = {
 })
 export class HumComponent implements OnInit {
 
+  @Input()  item!: any[];
+
   ngOnInit(): void {
   }
+
   public chartOptions: Partial<ChartOptions> | any;
 
   constructor() {

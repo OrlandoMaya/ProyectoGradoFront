@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
+
 
 @Component({
   selector: 'app-maps',
@@ -6,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./maps.component.scss']
 })
 export class MapsComponent implements OnInit {
+
+  @Input()  item!: any[];
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
   title1 = 'gmaps';
   position1 = {
@@ -29,11 +37,6 @@ export class MapsComponent implements OnInit {
   position3 = {
     lat: (this.position1.lat+this.position2.lat)/2,
     lng: (this.position1.lng+this.position2.lng)/2,
-  }
-
-  constructor() { }
-
-  ngOnInit(): void {
   }
 
 }
