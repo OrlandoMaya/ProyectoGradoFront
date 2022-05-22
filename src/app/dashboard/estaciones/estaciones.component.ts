@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { switchMap } from 'rxjs';
+import { concatMap, forkJoin, merge, switchMap } from 'rxjs';
 import { Estacion } from 'src/app/models/estacion.model';
 import { CiudadService } from 'src/app/services/ciudad.service';
 import { DepartamentosService } from 'src/app/services/departamentos.service';
@@ -14,19 +14,19 @@ import { AddEstacionComponent } from './add-estacion/add-estacion.component';
 })
 export class EstacionesComponent implements OnInit {
 
-  displayedColumns:string[]=['position',]
-  dataSource!:Estacion[];
+  displayedColumns:string[]=['position','nombre','latitud','longitud','ciudad','departamento']
+  dataSource!:any[];
 
   constructor(public dialog: MatDialog, private estacionService:EstacionService, private departamentoService:DepartamentosService,
     private ciudadService:CiudadService) { }
 
   ngOnInit(): void {
     const estaciones:any[]=[]
-    // this.estacionService.Get().pipe(
-    //   switchMap((estacionesRes:any[])=>{
-    //     // return this.estacionService.GetUbicacion()
-    //   })
-    // )
+    this.estacionService.Get().subscribe((info:any)=>{
+      console.log(info)
+      
+    })
+    
     
   }
 
