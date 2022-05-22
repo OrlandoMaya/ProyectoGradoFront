@@ -1,0 +1,15 @@
+.outerContainer{
+    .headerContainer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-bottom:1.5px solid #B0B0B0;
+        .add{
+            cursor:pointer;
+        }
+    }
+    .bodyContainer{
+        
+    }
+}

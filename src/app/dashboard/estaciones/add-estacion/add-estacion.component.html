@@ -1,0 +1,56 @@
+<div class="outerContainer">
+  <div class="headerContainer">
+    <h1>Añadir estación</h1>
+  </div>
+  <div [formGroup]="addStationForm" class="bodyContainer">
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre</mat-label>
+      <input formControlName="nombre" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Estado</mat-label>
+      <mat-select formControlName="estado">
+        <mat-option *ngFor="let op of options" [value]="op">
+          {{ op }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Latitud</mat-label>
+        <input formControlName="latitud" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Longitud</mat-label>
+        <input formControlName="longitud" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Departamento</mat-label>
+        <mat-select formControlName="idDepartamento">
+            <mat-option *ngFor="let op of departamentos" [value]="op.uid">
+              {{ op.nombre }}
+            </mat-option>
+          </mat-select>
+    </mat-form-field>
+    <mat-form-field  appearance="outline">
+        <mat-label>Ciudad</mat-label>
+        <mat-select formControlName="idCiudad" [disabled]="!addStationForm.value.idDepartamento">
+            <mat-option *ngFor="let op of ciudades" [value]="op.uid">
+              {{ op.nombre }}
+            </mat-option>
+          </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Topic</mat-label>
+      <input formControlName="topic" matInput />
+    </mat-form-field>
+    
+    <button class="sendButton" (click)="addStation()" mat-flat-button color="primary">Enviar</button>
+  </div>
+</div>
+
+<!-- "nombre":"Rio Suarez",
+    "estado":"Operando",
+    "topic":"ESP8662-8",
+    "latitud":"6.904887",
+    "longitud":"-73.001425",
+    "idCiudad":"6258d916bee20ef9628d519f" -->

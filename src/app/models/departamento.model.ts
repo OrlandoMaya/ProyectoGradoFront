@@ -1,4 +1,4 @@
 export interface Departamento{
-    id:string;
+    uid:string;
     nombre:string;
 }
