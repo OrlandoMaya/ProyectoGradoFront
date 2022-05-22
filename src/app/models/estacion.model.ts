@@ -1,7 +1,10 @@
 export interface Estacion{
     uid:string;
     nombre:string;
+    estado: string;
+    topic: string;
+    enable: boolean;
+    createTime: Date;
     idUbicacion:string;
-    inicio:Date;
-    estado:string;
+    ruleId: string;
 }
