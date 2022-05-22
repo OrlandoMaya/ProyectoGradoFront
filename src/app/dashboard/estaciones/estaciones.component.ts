@@ -14,20 +14,16 @@ import { AddEstacionComponent } from './add-estacion/add-estacion.component';
 })
 export class EstacionesComponent implements OnInit {
 
-  displayedColumns:string[]=['position','nombre','latitud','longitud','ciudad','departamento']
+  displayedColumns:string[]=['position','nombre','estado','topic','latitud','longitud','ciudad','departamento']
   dataSource!:any[];
 
   constructor(public dialog: MatDialog, private estacionService:EstacionService, private departamentoService:DepartamentosService,
     private ciudadService:CiudadService) { }
 
   ngOnInit(): void {
-    const estaciones:any[]=[]
     this.estacionService.Get().subscribe((info:any)=>{
-      console.log(info)
-      
+      this.dataSource=info.estaciones;
     })
-    
-    
   }
 
   openDialog(): void {

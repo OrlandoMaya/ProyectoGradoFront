@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { FormControl } from '@angular/forms';
-import { LocationService } from 'src/app/services/location.service';
-import { Ubicacion } from 'src/app/models/ubicacion.model';
 import { Estacion } from "src/app/models/estacion.model";
 
 
@@ -12,21 +10,13 @@ import { Estacion } from "src/app/models/estacion.model";
 })
 export class MapsComponent implements OnInit {
 
-
-  Location = new FormControl(); // va pa'l hijo
-
-  LocationList!: Ubicacion[];//arreglar despues
-
   @Input() item!: Estacion[];
 
-  constructor(private _location: LocationService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this._location.Get().subscribe(value => {
-      console.log(value.ubicaciones)
-      this.LocationList = value.ubicaciones;//.map((estacion:Estacion) => estacion.nombre);
-    })
+
   }
 
   title = 'gmaps';
@@ -40,7 +30,7 @@ export class MapsComponent implements OnInit {
   }
 
   _position(id: string) {
-    for (let i of this.LocationList) {
+    for (let i of this.item) {
       if (i.uid == id) {
         this.position = {
           lat: i.latitud,
