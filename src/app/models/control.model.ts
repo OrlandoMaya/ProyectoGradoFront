@@ -1,5 +1,5 @@
 export interface Control{
-    id:string;
+    uid:string;
     humedad:number;
     temperatura:number;
     nivelCauce:number;
