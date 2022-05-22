@@ -2,13 +2,13 @@
   <mat-label>Estaciones</mat-label>
   <mat-select [formControl]="Station" multiple>
     <mat-select-trigger>
-      {{Station.value ? Station.value[0] : ''}}
+      {{Station.value ? Station.value[0].nombre : ''}}
       <span *ngIf="Station.value?.length > 1" class="example-additional-selection">
         (+{{Station.value.length - 1}} {{Station.value?.length === 2 ? 'other' : 'others'}})
       </span>
     </mat-select-trigger>
     <!--<mat-option *ngFor="let Station of StationList" [value]="Station.id">{{Station.nombre}}</mat-option>-->
-    <mat-option *ngFor="let Station of ['ago','algoosa','asdadas']" [value]="Station">{{Station}}</mat-option>
+    <mat-option *ngFor="let Station of StationList" [value]="Station">{{Station.nombre}}</mat-option>
     <!--rf 34-->
   </mat-select>
 </mat-form-field>
@@ -17,7 +17,7 @@
 <br>
 
 <div class="head">
-  <app-maps></app-maps>
+  <app-maps  [item]="Station.value" ></app-maps>
 </div>
 
 <div class="head">

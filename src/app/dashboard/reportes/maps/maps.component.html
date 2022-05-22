@@ -1,12 +1,8 @@
 <google-map height="350" width="100%" [center]="position3" [zoom]="15" >
-  <map-marker
-  [position]="position1"
-  [label]="label1"
-  [title]="title1"
-  ></map-marker>
-  <map-marker
+  <map-marker *ngFor="let i of item"
   [position]="position2"
-  [label]="label2"
-  [title]="title2"
+  [label]="i.nombre"
+  [title]="title"
   ></map-marker>
 </google-map>
+<button (click)="position()">Algo</button>

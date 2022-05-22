@@ -11,12 +11,12 @@ export class DepartmentService {
 
   constructor(private http:HttpClient) { }
 
-  Get(Departamento:any):Observable<any>{
-    return this.http.get<any>(`${environment.apiUrl}departamento`,Departamento)
+  Get():Observable<any>{
+    return this.http.get<any>(`${environment.apiUrl}departamento`)
   }
 
-  GetId(Departamento:any):Observable<any>{
-    return this.http.get<any>(`${environment.apiUrl}departamento`,Departamento)
+  GetId(id:string):Observable<any>{
+    return this.http.get<any>(`${environment.apiUrl}departamento/${id}`)
   }
 
   New(Departamento:any):Observable<any>{
@@ -27,7 +27,7 @@ export class DepartmentService {
     return this.http.put<any>(`${environment.apiUrl}departamento`,Departamento)
   }
 
-  eliminar(Departamento:any):Observable<any>{
-    return this.http.delete<any>(`${environment.apiUrl}departamento`,Departamento)
+  eliminar(id:string):Observable<any>{
+    return this.http.delete<any>(`${environment.apiUrl}departamento/${id}`)
   }
 }

@@ -11,12 +11,12 @@ export class CityService {
 
   constructor(private http:HttpClient) { }
 
-  Get(Ciudad:any):Observable<any>{
-    return this.http.get<any>(`${environment.apiUrl}ciudad`,Ciudad)
+  Get():Observable<any>{
+    return this.http.get<any>(`${environment.apiUrl}ciudad`)
   }
 
-  GetId(Ciudad:any):Observable<any>{
-    return this.http.get<any>(`${environment.apiUrl}ciudad`,Ciudad)
+  GetId(id:string):Observable<any>{
+    return this.http.get<any>(`${environment.apiUrl}ciudad/${id}`)
   }
 
   New(Ciudad:any):Observable<any>{
@@ -27,7 +27,7 @@ export class CityService {
     return this.http.put<any>(`${environment.apiUrl}ciudad`,Ciudad)
   }
 
-  eliminar(Ciudad:any):Observable<any>{
-    return this.http.delete<any>(`${environment.apiUrl}ciudad`,Ciudad)
+  eliminar(id:string):Observable<any>{
+    return this.http.delete<any>(`${environment.apiUrl}ciudad/${id}`)
   }
 }
