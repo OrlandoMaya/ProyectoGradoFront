@@ -41,7 +41,7 @@ export class MapsComponent implements OnInit {
 
   _position(id: string) {
     for (let i of this.LocationList) {
-      if (i.uid == id) {
+      if (i.id == id) {
         this.position = {
           lat: i.latitud,
           lng: i.longitud,
