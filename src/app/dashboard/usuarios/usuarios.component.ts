@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario.model';
+import { FormControl } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -10,13 +12,26 @@ import { Usuario } from 'src/app/models/usuario.model';
 
 export class UsuariosComponent implements OnInit {
 
-  add:boolean;
+  add: boolean;
 
-  displayedColumns: string[] = [ 'nombre', 'email', 'rol']; // 'password', 'rol'];
-  clickedRows = new Set<Usuario>();
-  constructor() {
-    this.add=true;
+  User = new FormControl(); // va pa'l hijo
+
+  UserList!: Usuario[];//arreglar despues
+
+  constructor(private _User: UserService) {
+    this.add = true;
   }
+
+  ngOnInit(): void {
+    this._User.Get().subscribe(value => {
+      console.log(value.usuarios)
+      this.UserList = value.usuarios;//.map((estacion:Estacion) => estacion.nombre);
+    })
+  }
+
+  displayedColumns: string[] = ['nombre', 'email', 'rol']; // 'password', 'rol'];
+  clickedRows = new Set<Usuario>();
+
 
   dataSource: Usuario[] = [
     { uid: '21313311', nombre: "Orlando Moncad", email: "somethings@smt.com", password: "12341234", rol: "ADMIN_ROL" },
@@ -29,8 +44,5 @@ export class UsuariosComponent implements OnInit {
     { uid: '3543345', nombre: "Orland", email: "somethings@", password: "1234", rol: "ADMIN_ROL" },
     { uid: '4353535', nombre: "Orlan", email: "somethings", password: "123", rol: "ADMIN_ROL" },
   ];
-
-  ngOnInit(): void {
-  }
 
 }

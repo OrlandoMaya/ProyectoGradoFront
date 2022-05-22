@@ -20,8 +20,9 @@ export class ReportesComponent implements OnInit {
 
   ngOnInit(): void {
     this._station.Get().subscribe(value => {
-      console.log(value.estaciones)
-      this.StationList = value.estaciones;//.map((estacion:Estacion) => estacion.nombre);
+
+      this.StationList = value.estaciones.map((estacion:Estacion) => estacion);
+      console.log(this.StationList)
     })
     this.Station.valueChanges.subscribe(values => {
     } )
