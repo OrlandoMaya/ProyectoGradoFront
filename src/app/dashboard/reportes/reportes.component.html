@@ -17,7 +17,7 @@
 <br>
 
 <div class="head">
-  <app-maps></app-maps>
+  <app-maps [item]="Station.value" ></app-maps>
 </div>
 
 <div class="head">
@@ -29,12 +29,12 @@
 <br>
 
 <div class="foot">
-  <app-vel-agua></app-vel-agua>
+  <app-vel-agua [item]="Station.value" ></app-vel-agua>
 </div>
 
 
 <div class="center">
-  <app-hum></app-hum>
+  <app-hum [item]="Station.value" ></app-hum>
 </div>
 
 <br>
@@ -43,11 +43,11 @@
 
 
 <div class="center">
-  <app-prec></app-prec>
+  <app-prec [item]="Station.value" ></app-prec>
 </div>
 
 <div class="foot">
-  <app-temp></app-temp>
+  <app-temp [item]="Station.value" ></app-temp>
 </div>
 
 <br>
