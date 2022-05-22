@@ -1,10 +1,11 @@
 export interface Estacion{
-    uid:string;
-    nombre:string;
-    estado: string;
-    topic: string;
-    enable: boolean;
-    createTime: Date;
-    idUbicacion:string;
-    ruleId: string;
+  ciudad: string;
+  departamento: string;
+  estado: string;
+  latitud: number;
+  longitud: number;
+  nombre: string;
+  topic: string;
+  uid: string;
+  _id: string;
 }
