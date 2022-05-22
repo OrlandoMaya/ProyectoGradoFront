@@ -3,4 +3,5 @@ export interface Ubicacion{
     latitud:number;
     longitud:number;
     idCiudad:string;
+    uid: string;
 }
