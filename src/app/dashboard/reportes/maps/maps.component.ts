@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { FormControl } from '@angular/forms';
 import { Estacion } from "src/app/models/estacion.model";
 
 
@@ -23,10 +22,6 @@ export class MapsComponent implements OnInit {
   position = {
     lat: 7.156107,
     lng: -73.088516
-  }
-  label2 = {
-    color: 'black',
-    text: 'ESP8266-1'
   }
 
   _position(id: string) {

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario.model';
 import { FormControl } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AddUsuarioComponent } from './add-usuario/add-usuario.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-usuarios',
@@ -18,7 +21,9 @@ export class UsuariosComponent implements OnInit {
 
   UserList!: Usuario[];//arreglar despues
 
-  constructor(private _User: UserService) {
+  rol = this.cookieService.get('rol')
+
+  constructor(private _User: UserService, public dialog: MatDialog, private cookieService: CookieService) {
     this.add = true;
   }
 
@@ -29,8 +34,23 @@ export class UsuariosComponent implements OnInit {
     })
   }
 
-  displayedColumns: string[] = [ 'rol','nombre',  'email']; // 'password', 'rol'];
+  displayedColumns: string[] = ['rol', 'nombre', 'email', 'uid']; // 'password', 'rol'];
   clickedRows = new Set<Usuario>();
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddUsuarioComponent, {
+      width: '300px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
+
+  }
+
+  EliminarUsuario(id:string){
+    this._User.eliminar(id).subscribe(result => {
+      console.log("eliminado");
+    });
+  }
 
 }
