@@ -1,0 +1,15 @@
+.outerContainer{
+  .headerContainer{
+      border-bottom: 1.5px solid #B0B0B0;
+  }
+  .bodyContainer{
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+  }
+  .sendButton{
+      width: 201px;
+      height: 52px;
+  }
+}

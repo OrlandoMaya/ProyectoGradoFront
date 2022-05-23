@@ -19,6 +19,7 @@ import { MapsComponent } from './reportes/maps/maps.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { EstacionesComponent } from './estaciones/estaciones.component';
 import { AddEstacionComponent } from './estaciones/add-estacion/add-estacion.component';
+import { AddUsuarioComponent } from './usuarios/add-usuario/add-usuario.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { AddEstacionComponent } from './estaciones/add-estacion/add-estacion.com
     MapsComponent,
     EstacionesComponent,
     AddEstacionComponent,
+    AddUsuarioComponent,
   ],
   imports: [
     CommonModule,
