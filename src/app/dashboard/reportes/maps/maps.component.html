@@ -1,7 +1,7 @@
 <google-map height="350" width="100%" [center]="position" [zoom]="7" >
 
   <map-marker *ngFor="let i of item"
-  [position]="_position(i.idUbicacion)"
+  [position]="_position(i.uid)"
   [label]="i.nombre"
   [title]="title"
   ></map-marker>

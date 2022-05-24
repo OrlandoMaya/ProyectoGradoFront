@@ -15,7 +15,6 @@ export class sidebarComponent implements OnInit {
 
   constructor(private cookieService: CookieService) {
 
-
   }
 
   ngOnInit(): void {

@@ -1,1 +1,8 @@
-<p>map works!</p>
+<google-map height="40%" width="40%" [center]="position" [zoom]="7" >
+
+  <map-marker *ngFor="let i of StationList"
+  [position]="_position(i.uid)"
+  [label]="i.nombre"
+  [title]="title"
+  ></map-marker>
+</google-map>
