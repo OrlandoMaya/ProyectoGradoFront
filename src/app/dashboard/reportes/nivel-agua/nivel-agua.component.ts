@@ -1,4 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 
 import {
   ChartComponent,
@@ -9,8 +15,9 @@ import {
   ApexStroke,
   ApexYAxis,
   ApexTitleSubtitle,
-  ApexLegend
-} from "ng-apexcharts";
+  ApexLegend,
+} from 'ng-apexcharts';
+import { ControlService } from 'src/app/services/control.service';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -27,67 +34,76 @@ export type ChartOptions = {
 @Component({
   selector: 'app-nivel-agua',
   templateUrl: './nivel-agua.component.html',
-  styleUrls: ['./nivel-agua.component.scss']
+  styleUrls: ['./nivel-agua.component.scss'],
 })
 export class NivelAguaComponent implements OnInit {
-
   ngOnInit(): void {
-  }
-  public chartOptions: Partial<ChartOptions> | any;
 
-  constructor() {
+    const dataInfo=this.item.map((station) => {
+      return {
+        name: station.station.nombre,
+        data: station.data.map((info: any) => {
+          return info.nivelCauce;
+        }),
+      };
+    })
+
+
     this.chartOptions = {
-      series: [
-        {
-          name: "ESP8266-1",
-          data: [1.624,  2.8321,  1.836,  1.624,  0.8321,  1.836, 0.8357],
-        },
-        {
-          name: "ESP8266-2",
-          data: [1.11, 1.32, 1.45, 1.32, 1.34, 1.52, 1.41]
-        }
-      ],
+      series:
+      dataInfo,
       chart: {
-        type: "area",
+        type: 'area',
         height: 350,
         zoom: {
-          enabled: false
-        }
+          enabled: false,
+        },
       },
       dataLabels: {
-        enabled: false
+        enabled: false,
       },
       stroke: {
-        curve: "smooth"
+        curve: 'smooth',
       },
 
       title: {
-        text: "Nivel del Rio",
+        text: 'Nivel del Rio',
         align: 'center',
         style: {
-          fontSize:  '18px',
-          fontWeight:  'bold',
+          fontSize: '18px',
+          fontWeight: 'bold',
           //color:  'rgba(255, 255, 255, 0.8)'
         },
       },
-      labels: [
-        "2018-09-19T00:00:00.000Z",
-        "2018-09-19T01:30:00.000Z",
-        "2018-09-19T02:30:00.000Z",
-        "2018-09-19T03:30:00.000Z",
-        "2018-09-19T04:30:00.000Z",
-        "2018-09-19T05:30:00.000Z",
-        "2018-09-19T06:30:00.000Z"
-      ],
+      labels: 
+      this.item[0].data.map((data:any)=>{return data.fecha})
+      // [
+      //   '2018-09-19T00:00:00.000Z',
+      //   '2018-09-19T01:30:00.000Z',
+      //   '2018-09-19T02:30:00.000Z',
+      //   '2018-09-19T03:30:00.000Z',
+      //   '2018-09-19T04:30:00.000Z',
+      //   '2018-09-19T05:30:00.000Z',
+      //   '2018-09-19T06:30:00.000Z',
+      // ]
+      ,
       xaxis: {
-        type: "datetime"
+        type: 'datetime',
       },
       yaxis: {
-        opposite: true
+        opposite: true,
       },
       legend: {
-        horizontalAlign: "left"
-      }
+        horizontalAlign: 'left',
+      },
     };
+  }
+
+  @Input() item!: any[];
+
+  public chartOptions: Partial<ChartOptions> | any;
+
+  constructor(private _control: ControlService) {
+    
   }
 }

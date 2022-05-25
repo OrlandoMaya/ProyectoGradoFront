@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
 import {
   ChartComponent,
@@ -31,22 +31,20 @@ export type ChartOptions = {
 })
 export class PrecComponent implements OnInit {
 
-  ngOnInit(): void {
-  }
-  public chartOptions: Partial<ChartOptions> | any;
+  @Input()  item!: any[];
 
-  constructor() {
+  ngOnInit(): void {
+    const dataInfo=this.item.map((station) => {
+      return {
+        name: station.station.nombre,
+        data: station.data.map((info: any) => {
+          return info.precipitacion??0;
+        }),
+      };
+    })
+
     this.chartOptions = {
-      series: [
-        {
-          name: "ESP8266-1",
-          data: [162.4,  83.21,  183.6,  162.4,  83.21,  183.6, 0],
-        },
-        {
-          name: "ESP8266-2",
-          data: [111, 132, 145, 132, 134, 152, 141]
-        }
-      ],
+      series: dataInfo,
       chart: {
         type: "area",
         height: 350,
@@ -70,15 +68,7 @@ export class PrecComponent implements OnInit {
           //color:  'rgba(255, 255, 255, 0.8)'
         },
       },
-      labels: [
-        "2018-09-19T00:00:00.000Z",
-        "2018-09-19T01:30:00.000Z",
-        "2018-09-19T02:30:00.000Z",
-        "2018-09-19T03:30:00.000Z",
-        "2018-09-19T04:30:00.000Z",
-        "2018-09-19T05:30:00.000Z",
-        "2018-09-19T06:30:00.000Z"
-      ],
+      labels: this.item[0].data.map((data:any)=>{return data.fecha}),
       xaxis: {
         type: "datetime"
       },
@@ -89,5 +79,11 @@ export class PrecComponent implements OnInit {
         horizontalAlign: "left"
       }
     };
+  }
+
+  public chartOptions: Partial<ChartOptions> | any;
+
+  constructor() {
+    
   }
 }

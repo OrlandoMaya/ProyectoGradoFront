@@ -1,6 +1,7 @@
-export interface Estacion{
+export interface Ubicacion{
     id:string;
-    latitud:string;
-    longitud:string;
+    latitud:number;
+    longitud:number;
     idCiudad:string;
+    uid: string;
 }

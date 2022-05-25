@@ -1,7 +1,11 @@
 export interface Estacion{
-    id:string;
-    nombre:string;
-    idUbicacion:string;
-    inicio:Date;
-    estado:string;
+  ciudad: string;
+  departamento: string;
+  estado: string;
+  latitud: number;
+  longitud: number;
+  nombre: string;
+  topic: string;
+  uid: string;
+  _id: string;
 }

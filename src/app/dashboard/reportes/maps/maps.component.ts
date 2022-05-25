@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
+import { Estacion } from "src/app/models/estacion.model";
+
 
 @Component({
   selector: 'app-maps',
@@ -7,33 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapsComponent implements OnInit {
 
-  title1 = 'gmaps';
-  position1 = {
-    lat: 7.155745,
-    lng: -73.092464
+  @Input() item!: Estacion[];
+
+  constructor() {
   }
-  label1 = {
-    color: 'white',
-    text: 'ESP8266-1'
+
+  ngOnInit(): void {
+
   }
-  title2 = 'gmaps';
-  position2 = {
+
+  title = 'gmaps';
+  position = {
     lat: 7.156107,
     lng: -73.088516
   }
-  label2 = {
-    color: 'white',
-    text: 'ESP8266-1'
-  }
 
-  position3 = {
-    lat: (this.position1.lat+this.position2.lat)/2,
-    lng: (this.position1.lng+this.position2.lng)/2,
-  }
-
-  constructor() { }
-
-  ngOnInit(): void {
+  _position(id: string) {
+    for (let i of this.item.map((station:any)=>{return station.station})) {
+      if (i.uid == id) {
+        this.position = {
+          lat: i.latitud,
+          lng: i.longitud,
+        }
+      }
+    }
+    return this.position;
   }
 
 }
