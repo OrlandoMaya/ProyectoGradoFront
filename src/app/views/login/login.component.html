@@ -4,7 +4,7 @@
 
     <mat-spinner diameter="50" class="spinner" *ngIf="loading"></mat-spinner>
 
-    <form [formGroup]="form" (ngSubmit)="ingresar()" *ngIf="!loading" >
+    <form class="form" [formGroup]="form" (ngSubmit)="ingresar()" *ngIf="!loading" >
       <img src="./assets/Imgs/waterfall.png" width="50%">
       <h1>Login</h1>
       <mat-form-field appearance="fill" class="ancho">

@@ -35,22 +35,17 @@ export class TempComponent implements OnInit {
   @Input()  item!: any[];
 
   ngOnInit(): void {
-  }
+    const dataInfo=this.item.map((station) => {
+      return {
+        name: station.station.nombre,
+        data: station.data.map((info: any) => {
+          return info.temperatura;
+        }),
+      };
+    })
 
-  public chartOptions: Partial<ChartOptions> | any;
-
-  constructor() {
     this.chartOptions = {
-      series: [
-        {
-          name: "ESP8266-1",
-          data: [32.4,  33.21,  33.6,  32.4,  28.21,  28.6, 28.57],
-        },
-        {
-          name: "ESP8266-2",
-          data: [32.4,  28.21,  28.6, 28.57, 32.4,  33.21,  33.6]
-        }
-      ],
+      series: dataInfo,
       chart: {
         type: "line",
         height: 350,
@@ -73,15 +68,7 @@ export class TempComponent implements OnInit {
           //color:  'rgba(255, 255, 255, 0.8)'
         },
       },
-      labels: [
-        "2018-09-19T00:00:00.000Z",
-        "2018-09-19T01:30:00.000Z",
-        "2018-09-19T02:30:00.000Z",
-        "2018-09-19T03:30:00.000Z",
-        "2018-09-19T04:30:00.000Z",
-        "2018-09-19T05:30:00.000Z",
-        "2018-09-19T06:30:00.000Z"
-      ],
+      labels: this.item[0].data.map((data:any)=>{return data.fecha}),
       fill: {
         type: "gradient",
         gradient: {
@@ -113,5 +100,11 @@ export class TempComponent implements OnInit {
         horizontalAlign: "left"
       }
     };
+  }
+
+  public chartOptions: Partial<ChartOptions> | any;
+
+  constructor() {
+    
   }
 }

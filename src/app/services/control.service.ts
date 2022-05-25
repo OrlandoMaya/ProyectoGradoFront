@@ -14,4 +14,8 @@ export class ControlService {
   Get():Observable<any>{
     return this.http.get<any>(`${environment.apiUrl}webhook`)
   }
+
+  GetByStation(idStation:string,quantity:number){
+    return this.http.get<any>(`${environment.apiUrl}webhook/${idStation}/${quantity.toString()}`)
+  }
 }

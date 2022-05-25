@@ -34,22 +34,18 @@ export class VelAguaComponent implements OnInit {
   @Input()  item!: any[];
 
   ngOnInit(): void {
-  }
+    console.log(this.item)
+    const dataInfo=this.item.map((station) => {
+      return {
+        name: station.station.nombre,
+        data: station.data.map((info: any) => {
+          return info.velocidadCauce;
+        }),
+      };
+    })
 
-  public chartOptions: Partial<ChartOptions> | any;
-
-  constructor() {
     this.chartOptions = {
-      series: [
-        {
-          name: "ESP8266-1",
-          data: [162.4,  83.21,  183.6,  162.4,  83.21,  183.6, 83.57],
-        },
-        {
-          name: "ESP8266-2",
-          data: [111, 132, 145, 132, 134, 152, 141]
-        }
-      ],
+      series: dataInfo,
       chart: {
         type: "line",
         height: 350,
@@ -75,15 +71,7 @@ export class VelAguaComponent implements OnInit {
           //color:  'rgba(255, 255, 255, 0.8)'
         },
       },
-      labels: [
-        "2018-09-19T00:00:00.000Z",
-        "2018-09-19T01:30:00.000Z",
-        "2018-09-19T02:30:00.000Z",
-        "2018-09-19T03:30:00.000Z",
-        "2018-09-19T04:30:00.000Z",
-        "2018-09-19T05:30:00.000Z",
-        "2018-09-19T06:30:00.000Z"
-      ],
+      labels: this.item[0].data.map((data:any)=>{return data.fecha}),
       xaxis: {
         type: "datetime"
       },
@@ -94,5 +82,12 @@ export class VelAguaComponent implements OnInit {
         horizontalAlign: "left"
       }
     };
+
+  }
+
+  public chartOptions: Partial<ChartOptions> | any;
+
+  constructor() {
+    
   }
 }
