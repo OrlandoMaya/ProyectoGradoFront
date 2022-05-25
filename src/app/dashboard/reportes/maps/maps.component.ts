@@ -25,7 +25,7 @@ export class MapsComponent implements OnInit {
   }
 
   _position(id: string) {
-    for (let i of this.item) {
+    for (let i of this.item.map((station:any)=>{return station.station})) {
       if (i.uid == id) {
         this.position = {
           lat: i.latitud,

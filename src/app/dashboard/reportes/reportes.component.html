@@ -12,42 +12,49 @@
   </mat-select>
 </mat-form-field>
 
-<br>
-
-<div class="head">
-  <app-maps [item]="Station.value" ></app-maps>
+<div *ngIf="StationSelected.length<1" class="noData">
+  <h1>Selecciona una estacion para ver sus datos</h1>
 </div>
 
-<div class="head">
-  <app-nivel-agua [item]="Station.value" ></app-nivel-agua>
+<div *ngIf="StationSelected.length>0" class="data">
+
+  <br>
+  
+  <div class="head">
+    <app-maps [item]="data" ></app-maps>
+  </div>
+  
+  <div class="head">
+    <app-nivel-agua [item]="data" ></app-nivel-agua>
+  </div>
+  
+  <br>
+  <mat-divider></mat-divider>
+  <br>
+  
+  <div class="foot">
+    <app-vel-agua [item]="data" ></app-vel-agua>
+  </div>
+  
+  
+  <div class="center">
+    <app-hum [item]="data" ></app-hum>
+  </div> 
+  <br>
+  <mat-divider></mat-divider>
+  <br>
+  
+  
+  <div class="center">
+    <app-prec [item]="data" ></app-prec>
+  </div>
+  
+  <div class="foot">
+    <app-temp [item]="data" ></app-temp>
+  </div>
+  
+  <br>
+  <mat-divider></mat-divider>
+  <br>
 </div>
-
-<br>
-<mat-divider></mat-divider>
-<br>
-
-<div class="foot">
-  <app-vel-agua [item]="Station.value" ></app-vel-agua>
-</div>
-
-
-<div class="center">
-  <app-hum [item]="Station.value" ></app-hum>
-</div>
-
-<br>
-<mat-divider></mat-divider>
-<br>
-
-
-<div class="center">
-  <app-prec [item]="Station.value" ></app-prec>
-</div>
-
-<div class="foot">
-  <app-temp [item]="Station.value" ></app-temp>
-</div>
-
-<br>
-<mat-divider></mat-divider>
-<br>
+  
