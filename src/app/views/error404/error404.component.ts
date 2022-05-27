@@ -9,7 +9,7 @@ import {SpiralService} from '../../services/spiral.service'
 export class Error404Component implements OnInit {
 
   constructor(private _SpiralService:SpiralService) {
-    _SpiralService.carga([""],'body')
+    _SpiralService.carga(["spiral"],'body')
   }
 
   ngOnInit(): void {
