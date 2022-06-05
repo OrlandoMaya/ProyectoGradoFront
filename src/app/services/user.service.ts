@@ -23,8 +23,8 @@ export class UserService {
     return this.http.post<any>(`${environment.apiUrl}usuario`,user)
   }
 
-  Actualizar(user:any):Observable<any>{
-    return this.http.put<any>(`${environment.apiUrl}usuario`,user)
+  Actualizar(user:any,idUsuario:string):Observable<any>{
+    return this.http.put<any>(`${environment.apiUrl}usuario/${idUsuario}`,user)
   }
 
   login(user:any):Observable<any>{

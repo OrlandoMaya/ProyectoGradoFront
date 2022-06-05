@@ -6,6 +6,6 @@ export interface Estacion{
   longitud: number;
   nombre: string;
   topic: string;
+  enabled:boolean;
   uid: string;
-  _id: string;
 }

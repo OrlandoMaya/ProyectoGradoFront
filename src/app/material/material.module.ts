@@ -18,6 +18,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select'; 
 import {MatTableModule} from '@angular/material/table';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
 
 
 
@@ -43,6 +45,8 @@ import {MatTableModule} from '@angular/material/table';
     MatDialogModule,
     MatSelectModule,
     MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule    
   ],
   exports: [
     CommonModule,
@@ -64,6 +68,12 @@ import {MatTableModule} from '@angular/material/table';
     MatDialogModule,
     MatSelectModule,
     MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+  ],
+  providers:[
+    { provide: MAT_DATE_LOCALE, useValue: 'es-CO' }
   ]
+  
 })
 export class MaterialModule { }

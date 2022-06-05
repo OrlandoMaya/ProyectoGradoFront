@@ -1,0 +1,64 @@
+<div class="outerContainer">
+    <div class="headerContainer">
+      <h1>Mantenimiento</h1>
+      <mat-icon (click)="addMantenimiento()" class="add">add</mat-icon>
+    </div>
+    <div class="bodyContainer">
+      <table mat-table [dataSource]="dataSource" class="">
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let element; let i = index">{{ i + 1 }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="observacion">
+          <th mat-header-cell *matHeaderCellDef>Observación</th>
+          <td mat-cell *matCellDef="let element">{{ element.observaciones }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="fechaInicio">
+          <th mat-header-cell *matHeaderCellDef>Fecha de inicio</th>
+          <td mat-cell *matCellDef="let element">{{ element.fechaInicio| date: 'dd/MM/yyyy' }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="fechaFin">
+          <th mat-header-cell *matHeaderCellDef>Fecha de finalización</th>
+          <td mat-cell *matCellDef="let element">{{ element.fechaFin?(element.fechaFin| date: 'dd/MM/yyyy'):"-"   }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="estado">
+          <th mat-header-cell *matHeaderCellDef>Estado</th>
+          <td mat-cell *matCellDef="let element">{{ element.estado }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="estacion">
+          <th mat-header-cell *matHeaderCellDef>Estacion</th>
+          <td mat-cell *matCellDef="let element">{{ element.estacion }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="usuario">
+          <th mat-header-cell *matHeaderCellDef>Usuario</th>
+          <td mat-cell *matCellDef="let element">{{ element.usuario }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="opciones">
+          <th mat-header-cell *matHeaderCellDef>Opciones</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-icon *ngIf="element.estado!='Finalizado'" class="pointer" (click)="finalizarMantenimiento(element)"
+            >check</mat-icon
+          >
+          <mat-icon class="pointer" (click)="eliminarMantenimiento(element)"
+            >delete</mat-icon
+          >
+          </td>
+        </ng-container>
+  
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: displayedColumns; let i = index"
+        ></tr>
+      </table>
+    </div>
+  </div>
+  
