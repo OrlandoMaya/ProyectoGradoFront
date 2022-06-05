@@ -23,12 +23,12 @@ export class EstacionService {
     return this.http.post<any>(`${environment.apiUrl}estacion`,estacion)
   }
 
-  // Actualizar(user:any):Observable<any>{
-  //   return this.http.put<any>(`${environment.apiUrl}estacion`,user)
-  // }
+  Actualizar(estacion:any,idEstacion:string):Observable<any>{
+    return this.http.put<any>(`${environment.apiUrl}estacion/${idEstacion}`,estacion)
+  }
 
-  eliminar():Observable<any>{
-    return this.http.delete<any>(`${environment.apiUrl}estacion`)
+  eliminar(idEstacion:string):Observable<any>{
+    return this.http.delete<any>(`${environment.apiUrl}estacion/${idEstacion}`)
   }
 
   GetUbicacion(idUbicacion:string):Observable<any>{

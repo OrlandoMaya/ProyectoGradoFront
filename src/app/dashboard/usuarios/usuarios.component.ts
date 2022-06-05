@@ -5,6 +5,8 @@ import { UserService } from 'src/app/services/user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddUsuarioComponent } from './add-usuario/add-usuario.component';
 import { CookieService } from 'ngx-cookie-service';
+import { ConfirmComponent } from 'src/app/shared/modals/confirm/confirm.component';
+import { UpdateUsuarioComponent } from './update-usuario/update-usuario.component';
 
 @Component({
   selector: 'app-usuarios',
@@ -27,11 +29,15 @@ export class UsuariosComponent implements OnInit {
     this.add = true;
   }
 
-  ngOnInit(): void {
+  getData(){
     this._User.Get().subscribe(value => {
       console.log(value.users)
       this.UserList = value.users;//.map((estacion:Estacion) => estacion.nombre);
     })
+  }
+
+  ngOnInit(): void {
+    this.getData();
   }
 
   displayedColumns: string[] = ['rol', 'nombre', 'email', 'uid']; // 'password', 'rol'];
@@ -47,9 +53,39 @@ export class UsuariosComponent implements OnInit {
 
   }
 
-  EliminarUsuario(id:string){
-    this._User.eliminar(id).subscribe(result => {
-      console.log("eliminado");
+  EliminarUsuario(usuario:any){
+    const title = '¿Desea eliminar el usuario?';
+    const onAccept = 'Eliminar';
+    const dialogRef = this.dialog.open(ConfirmComponent, {
+      width: '30vw',
+      data: {
+        title,
+        onRefuse: 'Cancelar',
+        onAccept,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this._User.eliminar(usuario.uid)
+          .subscribe((resp) => {
+            this.UserList = this.UserList.filter(
+              (usr) => usr.uid != usuario.uid
+            );
+            console.log(resp);
+          });
+      }
+    });
+  }
+
+  editUsuario(usuario:any){
+    const dialogRef = this.dialog.open(UpdateUsuarioComponent, {
+      width: '300px',
+      data:usuario
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.getData()
     });
   }
 
