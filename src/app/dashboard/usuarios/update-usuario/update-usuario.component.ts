@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UserService } from 'src/app/services/user.service';
 
@@ -20,8 +20,8 @@ export class UpdateUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.updateUsuarioForm = this.fb.group({
-      nombre: [this.data.nombre],
-      rol: [this.data.rol],
+      nombre: [this.data.nombre,[Validators.required]],
+      rol: [this.data.rol,[Validators.required]],
     });
   }
 

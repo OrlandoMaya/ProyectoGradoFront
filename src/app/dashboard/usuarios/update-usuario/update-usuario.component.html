@@ -17,6 +17,6 @@
         </mat-select>
       </mat-form-field>
   
-      <button class="sendButton" (click)="updateStation()" mat-flat-button color="primary">Enviar</button>
+      <button class="sendButton" [disabled]="!updateUsuarioForm.valid" (click)="updateStation()" mat-flat-button color="primary">Enviar</button>
     </div>
   </div>

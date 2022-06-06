@@ -8,35 +8,56 @@
       <input formControlName="nombre" matInput />
     </mat-form-field>
     <mat-form-field appearance="outline">
-        <mat-label>Latitud</mat-label>
-        <input formControlName="latitud" matInput />
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Longitud</mat-label>
-        <input formControlName="longitud" matInput />
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Departamento</mat-label>
-        <mat-select formControlName="idDepartamento">
-            <mat-option *ngFor="let op of departamentos" [value]="op.uid">
-              {{ op.nombre }}
-            </mat-option>
-          </mat-select>
-    </mat-form-field>
-    <mat-form-field  appearance="outline">
-        <mat-label>Ciudad</mat-label>
-        <mat-select formControlName="idCiudad" [disabled]="!addStationForm.value.idDepartamento">
-            <mat-option *ngFor="let op of ciudades" [value]="op.uid">
-              {{ op.nombre }}
-            </mat-option>
-          </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
       <mat-label>Topic</mat-label>
       <input formControlName="topic" matInput />
     </mat-form-field>
-    
-    <button class="sendButton" (click)="addStation()" mat-flat-button color="primary">Enviar</button>
+    <mat-form-field appearance="outline">
+      <mat-label>Nivel de precaución</mat-label>
+      <input formControlName="nivelPrecaucion" matInput />
+      <span matSuffix>cms</span>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Nivel de alerta</mat-label>
+      <input formControlName="nivelAlerta" matInput />
+      <span matSuffix>cms</span>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Latitud</mat-label>
+      <input formControlName="latitud" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Longitud</mat-label>
+      <input formControlName="longitud" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Departamento</mat-label>
+      <mat-select formControlName="idDepartamento">
+        <mat-option *ngFor="let op of departamentos" [value]="op.uid">
+          {{ op.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Ciudad</mat-label>
+      <mat-select
+        formControlName="idCiudad"
+        [disabled]="!addStationForm.value.idDepartamento"
+      >
+        <mat-option *ngFor="let op of ciudades" [value]="op.uid">
+          {{ op.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button
+      class="sendButton"
+      (click)="addStation()"
+      [disabled]="!addStationForm.valid"
+      mat-flat-button
+      color="primary"
+    >
+      Enviar
+    </button>
   </div>
 </div>
 

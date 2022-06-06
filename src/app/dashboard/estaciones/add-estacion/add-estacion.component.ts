@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Ciudad } from 'src/app/models/ciudad.model';
 import { Departamento } from 'src/app/models/departamento.model';
@@ -33,13 +33,14 @@ export class AddEstacionComponent implements OnInit {
       this.ciudades=ciudades;
     })
     this.addStationForm=this.fb.group({
-      nombre:[''],
-      estado:[''],
-      topic:[''],
-      latitud:[''],
-      longitud:[''],
-      idDepartamento:[''],
-      idCiudad:['']
+      nombre:['',[Validators.required]],
+      topic:['',[Validators.required]],
+      nivelPrecaucion:['',[Validators.required]],
+      nivelAlerta:['',[Validators.required]],
+      latitud:['',[Validators.required]],
+      longitud:['',[Validators.required]],
+      idDepartamento:['',[Validators.required]],
+      idCiudad:['',[Validators.required]]
     })
   }
 
