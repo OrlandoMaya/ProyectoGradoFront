@@ -20,6 +20,10 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { EstacionesComponent } from './estaciones/estaciones.component';
 import { AddEstacionComponent } from './estaciones/add-estacion/add-estacion.component';
 import { AddUsuarioComponent } from './usuarios/add-usuario/add-usuario.component';
+import { UpdateEstacionComponent } from './estaciones/update-estacion/update-estacion.component';
+import { MantenimientoComponent } from './mantenimiento/mantenimiento.component';
+import { AddMantenimientoComponent } from './mantenimiento/add-mantenimiento/add-mantenimiento.component';
+import { UpdateUsuarioComponent } from './usuarios/update-usuario/update-usuario.component';
 
 
 @NgModule({
@@ -39,6 +43,10 @@ import { AddUsuarioComponent } from './usuarios/add-usuario/add-usuario.componen
     EstacionesComponent,
     AddEstacionComponent,
     AddUsuarioComponent,
+    UpdateEstacionComponent,
+    MantenimientoComponent,
+    AddMantenimientoComponent,
+    UpdateUsuarioComponent
   ],
   imports: [
     CommonModule,

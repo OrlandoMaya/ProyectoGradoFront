@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {SpiralService} from '../../services/spiral.service'
 
 @Component({
   selector: 'app-home',
@@ -8,9 +7,7 @@ import {SpiralService} from '../../services/spiral.service'
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private _SpiralService:SpiralService) {
-    _SpiralService.carga(["olas"],'body')
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }

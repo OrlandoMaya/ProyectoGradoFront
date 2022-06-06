@@ -1,6 +1,7 @@
 export interface Mantenimiento{
     uid:string;
-    fecha:Date;
+    fechaInicio:Date;
+    fechaFin:Date;
     observaciones:string;
     idEstacion:number;
     idUsuario:number;

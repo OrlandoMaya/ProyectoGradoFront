@@ -1,0 +1,46 @@
+<div class="outerContainer">
+  <div class="headerContainer">
+    <h1>Añadir estación</h1>
+  </div>
+  <div [formGroup]="addMantenimientoForm" class="bodyContainer">
+    <mat-form-field style="width: 100%" appearance="outline">
+        <mat-label>Observaciones</mat-label>
+        
+        <textarea formControlName="observaciones" matInput placeholder="Describa el reporte"></textarea>
+      </mat-form-field>
+    <mat-form-field style="width: 201px;" appearance="outline">
+      <mat-label>Fecha de inicio</mat-label>
+      <input formControlName="fechaInicio" matInput [matDatepicker]="picker" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Estacion asociada</mat-label>
+      <mat-select formControlName="idEstacion">
+        <mat-option *ngFor="let op of estaciones" [value]="op.uid">
+          {{ op.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field  appearance="outline">
+      <mat-label>Usuario asociado</mat-label>
+      <mat-select formControlName="idUsuario">
+        <mat-option *ngFor="let op of usuarios" [value]="op.uid">
+          {{ op.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+
+    <button
+      class="sendButton"
+      (click)="addMantenimiento()"
+      [disabled]="!addMantenimientoForm.valid"
+      mat-flat-button
+      color="primary"
+    >
+      Enviar
+    </button>
+  </div>
+</div>

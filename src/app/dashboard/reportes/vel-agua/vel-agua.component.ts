@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from "@angular/core";
 
 import {
   ChartComponent,
@@ -29,65 +29,70 @@ export type ChartOptions = {
   templateUrl: './vel-agua.component.html',
   styleUrls: ['./vel-agua.component.scss']
 })
-export class VelAguaComponent implements OnInit {
+export class VelAguaComponent implements OnInit, OnChanges {
 
   @Input()  item!: any[];
-
-  ngOnInit(): void {
-    console.log(this.item)
-    const dataInfo=this.item.map((station) => {
-      return {
-        name: station.station.nombre,
-        data: station.data.map((info: any) => {
-          return info.velocidadCauce;
-        }),
-      };
-    })
-
-    this.chartOptions = {
-      series: dataInfo,
-      chart: {
-        type: "line",
-        height: 350,
-        zoom: {
-          enabled: false
-        }
-      },
-      dataLabels: {
-        enabled: false
-      },
-      stroke: {
-        width: 5,
-        curve: "smooth",
-        dashArray: 8
-      },
-
-      title: {
-        text: "Velocidad del Agua",
-        align: 'center',
-        style: {
-          fontSize:  '18px',
-          fontWeight:  'bold',
-          //color:  'rgba(255, 255, 255, 0.8)'
-        },
-      },
-      labels: this.item[0].data.map((data:any)=>{return data.fecha}),
-      xaxis: {
-        type: "datetime"
-      },
-      yaxis: {
-        opposite: true
-      },
-      legend: {
-        horizontalAlign: "left"
-      }
-    };
-
-  }
-
   public chartOptions: Partial<ChartOptions> | any;
 
   constructor() {
     
   }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.item.length > 0) {
+      const dataInfo = this.item.map((station) => {
+        return {
+          name: station.station.nombre,
+          data: station.data.map((info: any) => {
+            return info.velocidadCauce;
+          }),
+        };
+      });
+      this.chartOptions = {
+        series: dataInfo,
+        chart: {
+          type: "line",
+          height: 350,
+          zoom: {
+            enabled: false
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          width: 5,
+          curve: "smooth",
+          dashArray: 8
+        },
+  
+        title: {
+          text: "Velocidad del Agua",
+          align: 'center',
+          style: {
+            fontSize:  '18px',
+            fontWeight:  'bold',
+            //color:  'rgba(255, 255, 255, 0.8)'
+          },
+        },
+        labels: this.item[0].data.map((data:any)=>{return data.fecha}),
+        xaxis: {
+          type: "datetime"
+        },
+        yaxis: {
+          opposite: true
+        },
+        legend: {
+          horizontalAlign: "left"
+        }
+      };
+    
+    }
+  }
+
+  ngOnInit(): void {
+
+  }
+
+  
 }

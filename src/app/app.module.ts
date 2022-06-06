@@ -18,6 +18,7 @@ import { SpiralService } from './services/spiral.service';
 import { MaterialModule } from './material/material.module';
 import { ApexModule } from './apex/apex.module';
 import { AuthInterceptorService } from './services/interceptors/authorization-interceptor';
+import { ConfirmComponent } from './shared/modals/confirm/confirm.component';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   hostname: 'localhost',
@@ -36,6 +37,7 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     LoginComponent,
     MapComponent,
     Error404Component,
+    ConfirmComponent,
   ],
   imports: [
     BrowserModule,

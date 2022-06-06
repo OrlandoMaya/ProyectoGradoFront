@@ -60,3 +60,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
  .mat-form-field.mat-form-field-invalid .mat-form-field-label {
     color: $redPrimary !important;
 }
+
+.pointer{
+    cursor: pointer;
+}
+
+.mat-form-field{
+    width: 201px;
+}

@@ -1,0 +1,22 @@
+<div class="outerContainer">
+    <div class="headerContainer">
+      <h1>Añadir estación</h1>
+    </div>
+    <div [formGroup]="updateUsuarioForm" class="bodyContainer">
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input formControlName="nombre" matInput />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Rol</mat-label>
+        <mat-select formControlName="rol">
+          <mat-option *ngFor="let op of rol" [value]="op">
+            {{ op }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <button class="sendButton" [disabled]="!updateUsuarioForm.valid" (click)="updateStation()" mat-flat-button color="primary">Enviar</button>
+    </div>
+  </div>

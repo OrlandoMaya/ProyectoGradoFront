@@ -1,4 +1,10 @@
-import { Component, OnInit, Input } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 
 import {
   ChartComponent,
@@ -9,8 +15,8 @@ import {
   ApexStroke,
   ApexYAxis,
   ApexTitleSubtitle,
-  ApexLegend
-} from "ng-apexcharts";
+  ApexLegend,
+} from 'ng-apexcharts';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -27,63 +33,64 @@ export type ChartOptions = {
 @Component({
   selector: 'app-prec',
   templateUrl: './prec.component.html',
-  styleUrls: ['./prec.component.scss']
+  styleUrls: ['./prec.component.scss'],
 })
-export class PrecComponent implements OnInit {
-
-  @Input()  item!: any[];
-
-  ngOnInit(): void {
-    const dataInfo=this.item.map((station) => {
-      return {
-        name: station.station.nombre,
-        data: station.data.map((info: any) => {
-          return info.precipitacion??0;
-        }),
-      };
-    })
-
-    this.chartOptions = {
-      series: dataInfo,
-      chart: {
-        type: "area",
-        height: 350,
-        zoom: {
-          enabled: false
-        }
-      },
-      dataLabels: {
-        enabled: false
-      },
-      stroke: {
-        curve: "smooth"
-      },
-
-      title: {
-        text: "Precipitaciones",
-        align: 'center',
-        style: {
-          fontSize:  '18px',
-          fontWeight:  'bold',
-          //color:  'rgba(255, 255, 255, 0.8)'
-        },
-      },
-      labels: this.item[0].data.map((data:any)=>{return data.fecha}),
-      xaxis: {
-        type: "datetime"
-      },
-      yaxis: {
-        opposite: true
-      },
-      legend: {
-        horizontalAlign: "left"
-      }
-    };
-  }
-
+export class PrecComponent implements OnInit, OnChanges {
+  @Input() item!: any[];
   public chartOptions: Partial<ChartOptions> | any;
 
-  constructor() {
-    
+  constructor() {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.item.length > 0) {
+      console.log(this.item)
+      const dataInfo = this.item.map((station) => {
+        return {
+          name: station.station.nombre,
+          data: station.data.map((info: any) => {
+            return info.precipitacion??'0';
+          }),
+        };
+      });
+      this.chartOptions = {
+        series: dataInfo,
+        chart: {
+          type: 'area',
+          height: 350,
+          zoom: {
+            enabled: false,
+          },
+        },
+        dataLabels: {
+          enabled: false,
+        },
+        stroke: {
+          curve: 'smooth',
+        },
+
+        title: {
+          text: 'Precipitaciones',
+          align: 'center',
+          style: {
+            fontSize: '18px',
+            fontWeight: 'bold',
+            //color:  'rgba(255, 255, 255, 0.8)'
+          },
+        },
+        labels: this.item[0].data.map((data: any) => {
+          return data.fecha;
+        }),
+        xaxis: {
+          type: 'datetime',
+        },
+        yaxis: {
+          opposite: true,
+        },
+        legend: {
+          horizontalAlign: 'left',
+        },
+      };
+    }
   }
+  ngOnInit(): void {}
 }

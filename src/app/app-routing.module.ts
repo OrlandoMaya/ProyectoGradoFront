@@ -8,7 +8,7 @@ import { MapComponent } from './views/map/map.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'map',  redirectTo: '404' }, //component: MapComponent },
+  { path: 'map', component: MapComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard/logout', redirectTo: 'home', pathMatch: 'full' },//login
   { path: 'logout', redirectTo: 'home', pathMatch: 'full' },//login

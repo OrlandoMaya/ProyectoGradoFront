@@ -1,0 +1,7 @@
+<div class="outerContainer">
+    <h3>{{data.title}}</h3>
+    <div class="buttonsContainer">
+        <button class="sendButton" [mat-dialog-close]="true" mat-flat-button color="primary">{{data.onAccept}}</button>
+        <button class="sendButton" [mat-dialog-close]="false" mat-flat-button color="primary">{{data.onRefuse}}</button>
+    </div>
+</div>
