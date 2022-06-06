@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { UserService } from 'src/app/services/user.service';
 
@@ -18,10 +18,10 @@ export class AddUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.addUsuarioForm=this.fb.group({
-      nombre:[''],
-      correo:[''],
-      password:[''],
-      rol:[''],
+      nombre:['',[Validators.required]],
+      correo:['',[Validators.required]],
+      password:['',[Validators.required]],
+      rol:['',[Validators.required]],
     })
   }
 

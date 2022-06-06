@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
@@ -14,21 +15,40 @@ import { UpdateEstacionComponent } from './update-estacion/update-estacion.compo
 @Component({
   selector: 'app-estaciones',
   templateUrl: './estaciones.component.html',
-  styleUrls: ['./estaciones.component.scss']
+  styleUrls: ['./estaciones.component.scss'],
 })
 export class EstacionesComponent implements OnInit {
+  displayedColumns: string[] = [
+    'position',
+    'nombre',
+    'topic',
+    'nivelPrecaucion',
+    'nivelAlerta',
+    'latitud',
+    'longitud',
+    'ciudad',
+    'departamento',
+    'estado',
+    'edit',
+  ];
+  dataSource!: any[];
 
-  displayedColumns:string[]=['position','nombre','topic','latitud','longitud','ciudad','departamento','estado','edit']
-  dataSource!:any[];
+  constructor(
+    public dialog: MatDialog,
+    private estacionService: EstacionService,
+    private departamentoService: DepartamentosService,
+    private ciudadService: CiudadService
+  ) {}
 
-  constructor(public dialog: MatDialog, private estacionService:EstacionService, private departamentoService:DepartamentosService,
-    private ciudadService:CiudadService) { }
+  getData(){
+    this.estacionService.Get().subscribe((info: any) => {
+      this.dataSource = info.estaciones;
+      console.log(info);
+    });
+  }
 
   ngOnInit(): void {
-    this.estacionService.Get().subscribe((info:any)=>{
-      this.dataSource=info.estaciones;
-      console.log(info)
-    })
+    this.getData()
   }
 
   openDialog(): void {
@@ -36,53 +56,48 @@ export class EstacionesComponent implements OnInit {
       width: '30vw',
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      
-    }); 
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 
-  editStation(estacion:any):void{
+  editStation(estacion: any): void {
     const dialogRef = this.dialog.open(UpdateEstacionComponent, {
       width: '30vw',
-      data:estacion
+      data: estacion,
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      
+    dialogRef.afterClosed().subscribe((result) => {
+      this.getData();
     });
-     
   }
 
-  changeStatus(event:MatSlideToggleChange,station:any){
-    const title=event.checked?"¿Desea habilitar la estación?":"¿Desea deshabilitar la estación?";
-    const onAccept=event.checked?"Habilitar":"Deshabilitar";
+  changeStatus(event: MatSlideToggleChange, station: any) {
+    const title = event.checked
+      ? '¿Desea habilitar la estación?'
+      : '¿Desea deshabilitar la estación?';
+    const onAccept = event.checked ? 'Habilitar' : 'Deshabilitar';
     const dialogRef = this.dialog.open(ConfirmComponent, {
       width: '30vw',
-      data:{
-        title, 
-        onRefuse:"Cancelar",
-        onAccept
-      }
+      data: {
+        title,
+        onRefuse: 'Cancelar',
+        onAccept,
+      },
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if(result){
-        station.enabled=event.checked;
-        this.estacionService.Actualizar(station,station.uid).subscribe(resp=>{
-          this.dataSource.find(sta=>sta.uid==station.uid).enabled=event.checked;
-          console.log(resp)
-        })
-      }else{
-        console.log(event)
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        station.enabled = event.checked;
+        this.estacionService
+          .Actualizar(station, station.uid)
+          .subscribe((resp) => {
+            this.dataSource.find((sta) => sta.uid == station.uid).enabled =
+              event.checked;
+            console.log(resp);
+          });
+      } else {
+        console.log(event);
         event.source.writeValue(!event.checked);
       }
     });
   }
-
-
-
-
-
 }
-
-

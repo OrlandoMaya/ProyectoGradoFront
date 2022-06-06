@@ -47,11 +47,14 @@ export class UpdateEstacionComponent implements OnInit {
           topic: [this.data.topic],
           latitud: [this.data.latitud],
           longitud: [this.data.longitud],
+          nivelPrecaucion: [this.data.nivelPrecaucion],
+          nivelAlerta: [this.data.nivelAlerta],
           idDepartamento: [
             this.departamentos.find(
               (dep) => dep.nombre === this.data.departamento
             )?.uid,
           ],
+
           idCiudad: [
             this.ciudades.find((ciu) => ciu.nombre === this.data.ciudad)?.uid,
           ],

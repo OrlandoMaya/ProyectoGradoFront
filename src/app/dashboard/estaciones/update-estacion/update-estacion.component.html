@@ -8,6 +8,20 @@
         <input formControlName="nombre" matInput />
       </mat-form-field>
       <mat-form-field appearance="outline">
+        <mat-label>Topic</mat-label>
+        <input formControlName="topic" matInput />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Nivel de precaución</mat-label>
+        <input formControlName="nivelPrecaucion" matInput />
+        <span matSuffix>cms</span>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Nivel de alerta</mat-label>
+        <input formControlName="nivelAlerta" matInput />
+        <span matSuffix>cms</span>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
           <mat-label>Latitud</mat-label>
           <input formControlName="latitud" matInput />
       </mat-form-field>
@@ -31,12 +45,9 @@
               </mat-option>
             </mat-select>
       </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Topic</mat-label>
-        <input formControlName="topic" matInput />
-      </mat-form-field>
       
-      <button class="sendButton" (click)="updateStation()" mat-flat-button color="primary">Enviar</button>
+      
+      <button class="sendButton" [disabled]="!updateStationForm.valid" (click)="updateStation()" mat-flat-button color="primary">Enviar</button>
     </div>
   </div>
   
