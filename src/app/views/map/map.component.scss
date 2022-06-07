@@ -1,0 +1,29 @@
+body{
+  background: linear-gradient(to bottom, #005588 0%, #000000 100%);
+}
+
+.example-card {
+  width: 29.9%;
+  margin: 0.5%;
+  display: inline-block;
+  border-radius: 30px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+body{
+  background: linear-gradient(to bottom, #005588 0%, #000000 100%);
+}
+
+.t{
+  color: rgba($color: #000000, $alpha: 0);
+}
+
+@media screen and (max-width: 768px) {
+  .example-card {
+    width: 44.2%;
+  }
+}

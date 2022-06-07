@@ -1,8 +1,40 @@
-<google-map height="40%" width="40%" [center]="position" [zoom]="7" >
+<mat-card *ngFor="let i of StationList" class="example-card">
 
-  <map-marker *ngFor="let i of StationList"
-  [position]="_position(i.uid)"
-  [label]="i.nombre"
-  [title]="title"
-  ></map-marker>
-</google-map>
+  <mat-grid-list cols="4" rowHeight="1:1">
+
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{i.nombre}}</mat-card-title>
+      </mat-card-header>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      Ultima Actualización
+      <br>
+      Fecha: {{_datosFec(i.uid) | date:'yyyy-MM-dd'}}
+      <br>
+      Hora: {{_datosFec(i.uid) | date:'HH:mm:ss'}}
+      <br>
+      Temperatura: {{_datosTemp(i.uid)}}°C
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="4" [rowspan]="1">
+      <google-map [center]="_position(i.uid)" [zoom]="11">
+        <map-marker [position]="_position(i.uid)" [label]="i.nombre" [title]="title"></map-marker>
+      </google-map>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      Humedad: <br> {{_datosHumedad(i.uid)}} %
+      <br>
+      Nivel del Cauce: <br> {{_datosNivCau(i.uid).toFixed(2)}} m
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      Precipitaciones: <br> {{_datosPrec(i.uid)}} cm/h
+      <br>
+      Velocidad del Cauce: <br> {{_datosVelCau(i.uid)}} m/s
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+</mat-card>

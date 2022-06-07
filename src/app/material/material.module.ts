@@ -16,10 +16,12 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
-import {MatSelectModule} from '@angular/material/select'; 
+import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
@@ -46,7 +48,9 @@ import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
     MatSelectModule,
     MatTableModule,
     MatDatepickerModule,
-    MatNativeDateModule    
+    MatNativeDateModule,
+    MatCardModule,
+    MatGridListModule
   ],
   exports: [
     CommonModule,
@@ -69,11 +73,13 @@ import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
     MatSelectModule,
     MatTableModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCardModule,
+    MatGridListModule
   ],
   providers:[
     { provide: MAT_DATE_LOCALE, useValue: 'es-CO' }
   ]
-  
+
 })
 export class MaterialModule { }
