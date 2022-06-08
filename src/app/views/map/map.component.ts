@@ -61,71 +61,105 @@ export class MapComponent implements OnInit {
   }
 
   _datosFec(id: string) {
-    try{for (let i = this.ControlList.length-1; i > 0; i--) {
-      if(this.ControlList[i].idEstacion == id){
-        this.Unico = this.ControlList[i]
+    try {
+      for (let i = this.ControlList.length - 1; i > 0; i--) {
+        if (this.ControlList[i].idEstacion == id) {
+          this.Unico = this.ControlList[i]
+        }
       }
-    }}catch(error){
-    return 0;
+    } catch (error) {
+      return 0;
     }
-    return this.Unico.fecha;
+    if (this.Unico.fecha == null) {
+      return 'N/A';
+    } else {
+      return this.Unico.fecha;
+    }
   }
 
   _datosHumedad(id: string) {
-    try{for (let i = this.ControlList.length-1; i > 0; i--) {
-      if(this.ControlList[i].idEstacion == id){
-        this.Unico = this.ControlList[i]
+    try {
+      for (let i = this.ControlList.length - 1; i > 0; i--) {
+        if (this.ControlList[i].idEstacion == id) {
+          this.Unico = this.ControlList[i]
+        }
       }
-    }}catch(error){
-    return 0;
+    } catch (error) {
+      return 0;
     }
-    return this.Unico.humedad;
+    if (this.Unico.humedad == null) {
+      return 'N/A';
+    } else {
+      return this.Unico.humedad;
+    }
   }
 
   _datosNivCau(id: string) {
-    try{for (let i = this.ControlList.length-1; i > 0; i--) {
-      if(this.ControlList[i].idEstacion == id){
-        this.Unico = this.ControlList[i]
+    try {
+      for (let i = this.ControlList.length - 1; i > 0; i--) {
+        if (this.ControlList[i].idEstacion == id) {
+          this.Unico = this.ControlList[i]
+        }
       }
-    }}catch(error){
-    return 0;
+    } catch (error) {
+      return 0;
     }
-    return this.Unico.nivelCauce/100;
+    if (this.Unico.nivelCauce == null) {
+      return 'N/A';
+    } else {
+      return (this.Unico.nivelCauce / 100).toFixed(2);
+    }
   }
 
   _datosPrec(id: string) {
-    try{for (let i = this.ControlList.length-1; i > 0; i--) {
-      if(this.ControlList[i].idEstacion == id){
-        this.Unico = this.ControlList[i]
+    try {
+      for (let i = this.ControlList.length - 1; i > 0; i--) {
+        if (this.ControlList[i].idEstacion == id) {
+          this.Unico = this.ControlList[i]
+        }
       }
-    }}catch(error){
-    return 0;
+    } catch (error) {
+      return 0;
     }
-    return this.Unico.precipitacion;
+    if (this.Unico.precipitacion == null) {
+      return 'N/A';
+    } else {
+      return this.Unico.precipitacion;
+    }
   }
 
   _datosTemp(id: string) {
-    try{for (let i = this.ControlList.length-1; i > 0; i--) {
-      if(this.ControlList[i].idEstacion == id){
-        this.Unico = this.ControlList[i]
+    try {
+      for (let i = this.ControlList.length - 1; i > 0; i--) {
+        if (this.ControlList[i].idEstacion == id) {
+          this.Unico = this.ControlList[i]
+        }
       }
-    }}catch(error){
-    return 0;
+    } catch (error) {
+      return 0;
     }
-    return this.Unico.temperatura;
+    if (this.Unico.temperatura == null) {
+      return 'N/A';
+    } else {
+      return this.Unico.temperatura;
+    }
   }
 
   _datosVelCau(id: string) {
-    try{for (let i = this.ControlList.length-1; i > 0; i--) {
-      if(this.ControlList[i].idEstacion == id){
-        this.Unico = this.ControlList[i]
+    try {
+      for (let i = this.ControlList.length - 1; i > 0; i--) {
+        if (this.ControlList[i].idEstacion == id) {
+          this.Unico = this.ControlList[i]
+        }
       }
-    }}catch(error){
-    return 0;
+    } catch (error) {
+      return 0;
     }
-    return this.Unico.velocidadCauce;
+    if (this.Unico.velocidadCauce == null) {
+      return 'N/A';
+    } else {
+      return this.Unico.velocidadCauce;
+    }
   }
-
-
 
 }
