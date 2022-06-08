@@ -45,19 +45,7 @@
 </mat-card>
 -->
 
-<mat-toolbar>
-
-  <button mat-icon-button>
-    <img class="logo" src="/assets/Imgs/logo.svg" />
-  </button>
-
-  <span class="example-spacer"></span>
-
-  <button mat-button [routerLink]="['/']">
-    <mat-icon>arrow_back</mat-icon>
-  </button>
-
-</mat-toolbar>
+<app-toolbar></app-toolbar>
 
 
 <!-- LotusZaheer Cards -->
@@ -70,7 +58,7 @@
         <img width="110" height="110" role="img" aria-labelledby="title desc" class="center"
           src="/assets/Imgs/estacion.svg" />
         <div class="points center">
-          Placa tipo : {{(i.topic).slice(0, (i.topic).lastIndexOf("-"))}}
+          Tipo de placa : {{(i.topic).slice(0, (i.topic).lastIndexOf("-"))}}
         </div>
         <div class="level center">
           Ultima actualización
