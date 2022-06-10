@@ -22,7 +22,7 @@ import { ConfirmComponent } from './shared/modals/confirm/confirm.component';
 import { ToolbarComponent } from './views/map/toolbar/toolbar.component';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-  hostname: 'localhost',
+  hostname: 'www.flowriver.online',
   connectTimeout: 4000,
   clientId: 'emqx',
   keepalive: 60,
