@@ -1,9 +1,10 @@
-<div class="outerContainer">
+ <!-- <div class="outerContainer">
   <div class="headerContainer">
     <img class="logo" src="/assets/Imgs/logo.svg" alt="" />
   </div>
   <div class="centerContainer">
-    <p class="textDescription">
+
+  <p class="textDescription">
       <span class="title">Flowriver</span> es una iniciativa que busca ayudar a las personas
       que viven aledañas a rios y son propensos a una catastrofe ambiental. Mira
       en tiempo real las condiciones de los rios y preparate con antelacion
@@ -19,4 +20,33 @@
         </button>
     </div>
   </div>
+</div>-->
+
+<div class="container">
+  <canvas></canvas>
+
 </div>
+<span>
+  <span class="logo">
+    <img src="/assets/Imgs/logo.svg" alt="" />
+  </span>
+  <span class="description">
+
+    <a class="title" >Flowriver</a> es una iniciativa que busca ayudar a las personas
+    que viven aledañas a rios y son propensos a una catastrofe ambiental. Mira
+    en tiempo real las condiciones de los rios y preparate con antelacion
+    frente a algun peligro inminente
+
+  <br>
+  <br>
+  <br>
+  <a [routerLink]="['/login']" class="button" mat-flat-button color="primary">
+    Login
+  </a>
+  <br>
+  <br>
+<a [routerLink]="['/map']" class="button" mat-flat-button color="primary">
+    Ver mapa
+</a>
+</span>
+</span>

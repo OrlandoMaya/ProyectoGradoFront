@@ -3,10 +3,10 @@
 }
 
 mat-toolbar {
-  background-color: rgb(#fff, 0);
+  background-color: rgba(#000, 0.9);
   color: rgb(255, 255, 255, 0.75);
 }
 
-  img {
-    max-height: 6ex;
-  }
+.logo {
+  max-height: 6ex;
+}
