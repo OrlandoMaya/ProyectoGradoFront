@@ -20,6 +20,7 @@ import { ApexModule } from './apex/apex.module';
 import { AuthInterceptorService } from './services/interceptors/authorization-interceptor';
 import { ConfirmComponent } from './shared/modals/confirm/confirm.component';
 import { ToolbarComponent } from './views/map/toolbar/toolbar.component';
+import { CardsComponent } from './views/map/cards/cards.component';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   hostname: 'localhost',
@@ -40,6 +41,7 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     Error404Component,
     ConfirmComponent,
     ToolbarComponent,
+    CardsComponent,
   ],
   imports: [
     BrowserModule,
