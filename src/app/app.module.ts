@@ -10,7 +10,6 @@ import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { MapComponent } from './views/map/map.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CookieService } from 'ngx-cookie-service';
 import { GoogleMapsModule } from '@angular/google-maps';
 
 import { Error404Component } from './views/error404/error404.component';
@@ -20,6 +19,7 @@ import { ApexModule } from './apex/apex.module';
 import { AuthInterceptorService } from './services/interceptors/authorization-interceptor';
 import { ConfirmComponent } from './shared/modals/confirm/confirm.component';
 import { ToolbarComponent } from './views/map/toolbar/toolbar.component';
+import { ToastComponent } from './shared/toast/toast.component';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   hostname: 'www.flowriver.online',
@@ -40,6 +40,7 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     Error404Component,
     ConfirmComponent,
     ToolbarComponent,
+    ToastComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +53,7 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     ApexModule,
     GoogleMapsModule
   ],
-  providers: [CookieService,
+  providers: [
     SpiralService,
     {
       provide: HTTP_INTERCEPTORS,
