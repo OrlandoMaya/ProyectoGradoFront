@@ -4,9 +4,9 @@ import { FormControl } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddUsuarioComponent } from './add-usuario/add-usuario.component';
-import { CookieService } from 'ngx-cookie-service';
 import { ConfirmComponent } from 'src/app/shared/modals/confirm/confirm.component';
 import { UpdateUsuarioComponent } from './update-usuario/update-usuario.component';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -23,10 +23,12 @@ export class UsuariosComponent implements OnInit {
 
   UserList!: Usuario[];//arreglar despues
 
-  rol = this.cookieService.get('rol')
+  rol!:string;
 
-  constructor(private _User: UserService, public dialog: MatDialog, private cookieService: CookieService) {
+  constructor(private _User: UserService, public dialog: MatDialog, private utils:UtilsService) {
     this.add = true;
+    console.log(this.utils.parseJwt(localStorage.getItem('token') as string))
+    this.rol=this.utils.parseJwt(localStorage.getItem('token') as string).rol
   }
 
   getData(){

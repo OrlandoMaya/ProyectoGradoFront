@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,16 +8,19 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class sidebarComponent implements OnInit {
 
-  correo = this.cookieService.get('correo');
-  nombre = this.cookieService.get('nombre')
-  rol = this.cookieService.get('rol')
-  uid = this.cookieService.get('uid')
+  // correo = localStorage.getItem('correo');
+  // nombre = localStorage.getItem('nombre')
+  // rol = localStorage.getItem('rol')
+  // uid = localStorage.getItem('uid')
 
-  constructor(private cookieService: CookieService) {
+  user:any;
+  constructor(private utils:UtilsService) {
 
   }
 
   ngOnInit(): void {
+    this.user=this.utils.parseJwt(localStorage.getItem('token') as string)
+
   }
 
 }
