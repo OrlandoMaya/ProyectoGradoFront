@@ -4,6 +4,8 @@ export interface Estacion{
   estado: string;
   latitud: number;
   longitud: number;
+  nivelAlerta: number,
+  nivelPrecaucion: number,
   nombre: string;
   topic: string;
   enabled:boolean;
