@@ -68,8 +68,13 @@ html, body {
   z-index: 2;
 }
 
-.card.green .additional {
-  background: linear-gradient(#eeeeee, #0033ff);
+
+.card.red .additional {
+  background: linear-gradient(#ff0033, #111111);
+}
+
+.card.yellow .additional {
+  background: linear-gradient(#ffcc00, #111111);
 }
 
 
