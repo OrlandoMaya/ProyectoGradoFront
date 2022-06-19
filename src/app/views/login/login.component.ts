@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   loading: boolean = true;
 
-  constructor(private _userService: UserService, private lg: FormBuilder, private _snackBar: MatSnackBar, private router: Router, private cookieService: CookieService) {
+  constructor(private _userService: UserService, private lg: FormBuilder, private _snackBar: MatSnackBar, private router: Router, private utils:UtilsService) {
     this.form = lg.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
@@ -23,9 +23,8 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.cookieService.check('token')) {
+    if (localStorage.getItem('token')) {
       this.router.navigate(["/dashboard"])
-      this.cookieService.get('user')
     } else {
       this.loading = false;
     }
@@ -35,11 +34,7 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.form.value
 
     this._userService.login({ email, password }).subscribe((resp: any) => {
-      this.cookieService.set('token', resp.token, 1, '/')
-      this.cookieService.set('correo', resp.user.correo, 1, '/')
-      this.cookieService.set('nombre', resp.user.nombre, 1, '/')
-      this.cookieService.set('rol', resp.user.rol, 1, '/')
-      this.cookieService.set('uid', resp.user.uid, 1, '/')
+      localStorage.setItem('token', resp.token)
       this.router.navigate(["/dashboard"])
     }, (err) => {
       this._snackBar.open('Usuario y/o Contraseña Incorrectas', '0k', {

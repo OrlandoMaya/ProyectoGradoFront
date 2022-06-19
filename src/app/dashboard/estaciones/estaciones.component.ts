@@ -51,12 +51,14 @@ export class EstacionesComponent implements OnInit {
     this.getData()
   }
 
-  openDialog(): void {
+  addStation(): void {
     const dialogRef = this.dialog.open(AddEstacionComponent, {
       width: '30vw',
     });
 
-    dialogRef.afterClosed().subscribe((result) => {});
+    dialogRef.afterClosed().subscribe((result) => {
+      this.getData();
+    });
   }
 
   editStation(estacion: any): void {
