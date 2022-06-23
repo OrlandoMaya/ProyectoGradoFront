@@ -7,7 +7,10 @@
       </span>
     </mat-select-trigger>
     <!--<mat-option *ngFor="let Station of StationList" [value]="Station.id">{{Station.nombre}}</mat-option>-->
-    <mat-option *ngFor="let Station of StationList" [value]="Station">{{Station.nombre}}</mat-option>
+    <div *ngFor="let Station of StationList">
+      <mat-option *ngIf="Station.enabled==true" [value]="Station">{{Station.nombre}}</mat-option>
+    </div>
+
     <!--rf 34-->
   </mat-select>
 </mat-form-field>
@@ -19,42 +22,41 @@
 <div *ngIf="StationSelected.length>0" class="data">
 
   <br>
-  
+
   <div class="head">
     <app-maps [item]="data" ></app-maps>
   </div>
-  
+
   <div class="head">
     <app-nivel-agua [item]="data" ></app-nivel-agua>
   </div>
-  
+
   <br>
   <mat-divider></mat-divider>
   <br>
-  
+
   <div class="foot">
     <app-vel-agua [item]="data" ></app-vel-agua>
   </div>
-  
-  
+
+
   <div class="center">
     <app-hum [item]="data" ></app-hum>
-  </div> 
+  </div>
   <br>
   <mat-divider></mat-divider>
   <br>
-  
-  
+
+
   <div class="center">
     <app-prec [item]="data" ></app-prec>
   </div>
-  
+
   <div class="foot">
     <app-temp [item]="data" ></app-temp>
   </div>
-  
+
   <br>
   <mat-divider></mat-divider>
   <br>
 </div>
-  
