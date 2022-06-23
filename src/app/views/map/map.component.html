@@ -1,54 +1,75 @@
-<!--
-<mat-card *ngFor="let i of StationList" class="example-card">
-
-  <mat-grid-list cols="4" rowHeight="1:1">
-
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
-      <mat-card-header>
-        <mat-card-title>
-          <img src="/assets/Imgs/estacion.svg" />
-        </mat-card-title>
-        <mat-card-title>{{i.nombre}}</mat-card-title>
-      </mat-card-header>
-    </mat-grid-tile>
-
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
-      Ultima Actualización
-      <br>
-      Fecha: {{_datosFec(i.uid) | date:'yyyy-MM-dd'}}
-      <br>
-      Hora: {{_datosFec(i.uid) | date:'HH:mm:ss'}}
-      <br>
-      Temperatura: {{_datosTemp(i.uid)}}°C
-    </mat-grid-tile>
-
-    <mat-grid-tile [colspan]="4" [rowspan]="1">
-      <google-map [center]="_position(i.uid)" [zoom]="11">
-        <map-marker [position]="_position(i.uid)" [label]="i.nombre" [title]="title"></map-marker>
-      </google-map>
-    </mat-grid-tile>
-
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
-      Humedad: <br> {{_datosHumedad(i.uid)}} %
-      <br>
-      Niv. Cauce: <br> {{_datosNivCau(i.uid)}} m
-    </mat-grid-tile>
-
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
-      Precipitaciones: <br> {{_datosPrec(i.uid)}} cm/h
-      <br>
-      Vel. Cauce: <br> {{_datosVelCau(i.uid)}} m/s
-    </mat-grid-tile>
-
-  </mat-grid-list>
-
-</mat-card>
--->
-
 <app-toolbar></app-toolbar>
 
+<div class="center">
+  <div *ngFor="let i of ControlList2" class="card" [ngClass]="{'red' : (i.nivelCauce>i.nivelAlerta && i.nivelCauce>i.nivelPrecaucion),
+              'yellow' : (i.nivelCauce<i.nivelAlerta && i.nivelCauce>i.nivelPrecaucion)}">
+    <div class="additional">
+      <div class="user-card">
+        <div *ngIf="(i.nivelCauce>i.nivelAlerta && i.nivelCauce>i.nivelPrecaucion)" class="points center">
+          DESBORDAMIENTO!!!
+        </div>
+        <div *ngIf="(i.nivelCauce<i.nivelAlerta && i.nivelCauce>i.nivelPrecaucion)" class="points center">
+          Alerta!
+        </div>
+        <br>
+        <img width="110" height="110" role="img" aria-labelledby="title desc" class="center"
+          src="/assets/Imgs/estacion.svg" />
+        <div class="points center">
+          Tipo de placa : {{(i.topic).slice(0, (i.topic).lastIndexOf("-"))}}
+        </div>
+        <div class="level center">
+          Ultima actualización
+        </div>
+        <div class="points center">
+          {{ i.fecha | date:'yyyy-MM-dd'}}
+        </div>
+        <div class="points center">
+          {{ i.fecha | date:'HH:mm:ss'}}
+        </div>
 
-<!-- LotusZaheer Cards -->
+      </div>
+      <div class="more-info">
+        <google-map width="auto" height="250px" [center]="_position(i)" [zoom]="11">
+          <map-marker [position]="_position(i)" [label]="i.nombre" [title]="title"></map-marker>
+        </google-map>
+      </div>
+    </div>
+    <div class="general">
+      <br>
+      <h1>{{i.nombre}}</h1>
+      <p>
+        Humedad: {{i.humedad}} %
+        <img *ngIf="i.humedad2<0" src="../../../assets/Imgs/down.png">
+        <img *ngIf="i.humedad2>0" src="../../../assets/Imgs/up.png">
+        <img *ngIf="i.humedad2==0" src="../../../assets/Imgs/-.png">
+        <br>
+        Temperatura: {{i.temperatura}}°C
+        <img *ngIf="i.temperatura2<0" src="../../../assets/Imgs/down.png">
+        <img *ngIf="i.temperatura2>0" src="../../../assets/Imgs/up.png">
+        <img *ngIf="i.temperatura2==0" src="../../../assets/Imgs/-.png">
+        <br>
+        Nivel Cauce: {{i.nivelCauce}} m
+        <img *ngIf="i.nivelCauce2<0" src="../../../assets/Imgs/down.png">
+        <img *ngIf="i.nivelCauce2>0" src="../../../assets/Imgs/up.png">
+        <img *ngIf="i.nivelCauce2==0" src="../../../assets/Imgs/-.png">
+        <br>
+        Precipitaciones: {{i.precipitacion}} cm/h
+        <img *ngIf="i.precipitacion2<0" src="../../../assets/Imgs/down.png">
+        <img *ngIf="i.precipitacion2>0" src="../../../assets/Imgs/up.png">
+        <img *ngIf="i.precipitacion2==0" src="../../../assets/Imgs/-.png">
+        <br>
+        Velocidad del Cauce: {{i.velocidadCauce}} m/s
+        <img *ngIf="i.velocidadCauce2<0" src="../../../assets/Imgs/down.png">
+        <img *ngIf="i.velocidadCauce2>0" src="../../../assets/Imgs/up.png">
+        <img *ngIf="i.velocidadCauce2==0" src="../../../assets/Imgs/-.png">
+      </p>
+      <span class="more">Mueve el mouse para acceder a la ubicación</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- LotusZaheer Cards
 <div class="center">
   <div *ngFor="let i of StationList" class="card">
     <div class="additional">
@@ -96,3 +117,4 @@
   </div>
 
 </div>
+-->
