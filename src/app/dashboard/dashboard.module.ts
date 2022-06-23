@@ -24,6 +24,9 @@ import { UpdateEstacionComponent } from './estaciones/update-estacion/update-est
 import { MantenimientoComponent } from './mantenimiento/mantenimiento.component';
 import { AddMantenimientoComponent } from './mantenimiento/add-mantenimiento/add-mantenimiento.component';
 import { UpdateUsuarioComponent } from './usuarios/update-usuario/update-usuario.component';
+import { FallasComponent } from './inicio/fallas/fallas.component';
+import { EstacionesTotalComponent } from './inicio/estaciones-total/estaciones-total.component';
+import { UsuariosTotalComponent } from './inicio/usuarios-total/usuarios-total.component';
 
 
 @NgModule({
@@ -46,7 +49,10 @@ import { UpdateUsuarioComponent } from './usuarios/update-usuario/update-usuario
     UpdateEstacionComponent,
     MantenimientoComponent,
     AddMantenimientoComponent,
-    UpdateUsuarioComponent
+    UpdateUsuarioComponent,
+    FallasComponent,
+    EstacionesTotalComponent,
+    UsuariosTotalComponent
   ],
   imports: [
     CommonModule,

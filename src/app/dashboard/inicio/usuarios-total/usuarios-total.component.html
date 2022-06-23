@@ -1,0 +1,9 @@
+<div class="outerContainer">
+  <apx-chart
+  *ngIf="!cargando"
+  [series]="chartOptions.series"
+  [chart]="chartOptions.chart"
+  [labels]="chartOptions.labels"
+  [responsive]="chartOptions.responsive"
+  ></apx-chart>
+</div>

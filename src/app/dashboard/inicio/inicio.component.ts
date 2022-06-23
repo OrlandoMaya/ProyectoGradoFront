@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  user!:any;
+  constructor(private utils:UtilsService) { }
 
   ngOnInit(): void {
+    this.user=this.utils.parseJwt(localStorage.getItem('token') as string)
   }
 
 }
