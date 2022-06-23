@@ -1,1 +1,24 @@
-<p>inicio works!</p>
+<div class="outerContainer">
+  <div class="leftContainer">
+    <mat-card class="card">
+      <h2>Bienvenido, {{user.nombre}}</h2>
+      <h4>
+        Aquí podrás administrar todo tipo de cosas tales como se pueden ver en la barra lateral. Allí se presentarán múltiples opciones como actualizar, crear y eliminar elementos dependiendo de la sección a la que accedas. 
+        Recuerda que tu información de usuario esta sujeta al rol que tengas, en caso de requerir mayores permisos contacta con un administrador listado en los usuarios.
+Y recuerda cuidamos aquí, para cuidar de los otros allá.
+
+      </h4>
+    </mat-card>
+  </div>
+  <div class="rightContainer">
+    <mat-card class="cardEstaciones">
+      <app-estaciones-total></app-estaciones-total>
+    </mat-card>
+    <mat-card class="cardEstaciones">
+      <app-fallas></app-fallas>
+    </mat-card>
+    <mat-card class="cardEstaciones"> 
+      <app-usuarios-total></app-usuarios-total>
+    </mat-card>
+  </div>
+</div>
