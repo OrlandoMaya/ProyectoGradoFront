@@ -1,0 +1,24 @@
+.outerContainer{
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 32px);
+    justify-content: space-between;
+    padding-bottom: 16px;
+    .leftContainer{
+        width: 100%;
+        position: relative;
+        height: 60%;
+        .card{
+            position: relative;
+            height: calc(100% - 36px);
+        }
+    }
+    .rightContainer{
+        width: 100%;
+        height: 40%;
+        display: flex;
+        &>*{
+            width: 33%;
+        }
+    }
+}
