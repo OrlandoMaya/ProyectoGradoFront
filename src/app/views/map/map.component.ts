@@ -65,7 +65,7 @@ export class MapComponent implements OnInit, OnDestroy {
     this.subscription = this._mqttService
       .observe('flowriver/#')
       .subscribe((message: IMqttMessage) => {
-        // this.getData();
+        this.getData();
       });
   }
 
