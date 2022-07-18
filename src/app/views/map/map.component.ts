@@ -56,7 +56,7 @@ export class MapComponent implements OnInit, OnDestroy {
   constructor(
     private _station: StationService,
     private _control: ControlService,
-    private _mqttService: MqttService
+    // private _mqttService: MqttService
   ) { }
 
   ngOnInit(): void {
