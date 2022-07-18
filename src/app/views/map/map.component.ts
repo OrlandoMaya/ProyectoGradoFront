@@ -61,7 +61,7 @@ export class MapComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.getData();
+    // this.getData();
     // this.subscription = this._mqttService
     //   .observe('flowriver/#')
     //   .subscribe((message: IMqttMessage) => {
