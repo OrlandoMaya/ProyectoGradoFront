@@ -29,7 +29,7 @@ export class AddEstacionComponent implements OnInit {
       this.departamentos=departamentos;
     })
     this.ciudadService.Get().subscribe(({ciudades}:{ciudades:Ciudad[]})=>{
-      console.log(ciudades)
+      
       this.ciudades=ciudades;
     })
     this.addStationForm=this.fb.group({
@@ -46,7 +46,7 @@ export class AddEstacionComponent implements OnInit {
 
   addStation(){
     this.estacionService.New(this.addStationForm.value).subscribe(resp=>{
-      console.log(resp)
+      
       this.dialogRef.close();
     })
   }

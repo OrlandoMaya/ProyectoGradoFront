@@ -29,7 +29,6 @@ export class UpdateUsuarioComponent implements OnInit {
     this.userService
       .Actualizar(this.updateUsuarioForm.value,this.data.uid)
       .subscribe((resp) => {
-        console.log(resp);
         this.dialogRef.close();
       });
   }

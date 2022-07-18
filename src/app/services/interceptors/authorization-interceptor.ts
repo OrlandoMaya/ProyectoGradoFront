@@ -72,7 +72,6 @@ export class AuthInterceptorService implements HttpInterceptor {
         message = 'Sorry, an error has occurred';
         break;
     }
-    console.log(error)
     message = error.error.body ?? message;
     this.openSnackBar(message)
     return throwError('An error has occurred');

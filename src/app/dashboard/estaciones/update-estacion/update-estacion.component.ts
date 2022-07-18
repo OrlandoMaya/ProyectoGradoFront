@@ -30,7 +30,6 @@ export class UpdateEstacionComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.data);
     this.departamentosService
       .Get()
       .pipe(
@@ -40,7 +39,6 @@ export class UpdateEstacionComponent implements OnInit {
         })
       )
       .subscribe(({ ciudades }: { ciudades: Ciudad[] }) => {
-        console.log(ciudades);
         this.ciudades = ciudades;
         this.updateStationForm = this.fb.group({
           nombre: [this.data.nombre],
@@ -67,7 +65,6 @@ export class UpdateEstacionComponent implements OnInit {
     this.estacionService
       .Actualizar(this.updateStationForm.value, this.data.uid)
       .subscribe((resp) => {
-        console.log(resp);
         this.dialogRef.close();
       });
   }

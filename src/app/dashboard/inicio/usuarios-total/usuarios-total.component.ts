@@ -36,7 +36,6 @@ export class UsuariosTotalComponent implements OnInit {
 
   getData() {
     this.usuarioService.Get().subscribe((user) => {
-      console.log(user)
       this.users = user.users;
       this.chartOptions = {
         series: [
