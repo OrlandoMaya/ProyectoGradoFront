@@ -56,17 +56,17 @@ export class MapComponent implements OnInit, OnDestroy {
   constructor(
     private _station: StationService,
     private _control: ControlService,
-    // private _mqttService: MqttService
+    private _mqttService: MqttService
   ) { }
 
   ngOnInit(): void {
 
-    // this.getData();
-    // this.subscription = this._mqttService
-    //   .observe('flowriver/#')
-    //   .subscribe((message: IMqttMessage) => {
-    //     this.getData();
-    //   });
+    this.getData();
+    this.subscription = this._mqttService
+      .observe('flowriver/#')
+      .subscribe((message: IMqttMessage) => {
+        // this.getData();
+      });
   }
 
   getData() {
