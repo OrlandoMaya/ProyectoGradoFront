@@ -36,13 +36,11 @@ export class MantenimientoComponent implements OnInit {
   getInfo(){
     this.mantenimientoService.Get().subscribe((info: any) => {
       this.dataSource = info.mantenimientoes;
-      console.log(info);
     });
   }
 
   ngOnInit(): void {
     this.estacionService.Get().subscribe((info: any) => {
-      console.log(info);
     });
     this.getInfo()
   }
@@ -82,7 +80,6 @@ export class MantenimientoComponent implements OnInit {
             )
             manSelected.estado="Finalizado";
             manSelected.fechaFin=new Date();
-            console.log(resp);
           });
       }
     });
@@ -108,7 +105,6 @@ export class MantenimientoComponent implements OnInit {
             this.dataSource = this.dataSource.filter(
               (man) => man.uid != mantenimiento.uid
             );
-            console.log(resp);
           });
       }
     });

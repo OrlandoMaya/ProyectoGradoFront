@@ -53,6 +53,5 @@ export class MapsComponent implements OnInit, OnChanges {
         label: station.station.nombre,
       };
     });
-    console.log(this.positions)
   }
 }

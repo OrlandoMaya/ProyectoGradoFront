@@ -12,12 +12,15 @@ Y recuerda cuidamos aquí, para cuidar de los otros allá.
   </div>
   <div class="rightContainer">
     <mat-card class="cardEstaciones">
+      <h4 [ngStyle]="{'margin-bottom':'8px'}"><strong>Estaciones</strong></h4>
       <app-estaciones-total></app-estaciones-total>
     </mat-card>
     <mat-card class="cardEstaciones">
+      <h4 [ngStyle]="{'margin-bottom':'8px'}"><strong>Mantenimientos</strong></h4>
       <app-fallas></app-fallas>
     </mat-card>
     <mat-card class="cardEstaciones"> 
+      <h4 [ngStyle]="{'margin-bottom':'8px'}"><strong>Usuarios</strong></h4>
       <app-usuarios-total></app-usuarios-total>
     </mat-card>
   </div>

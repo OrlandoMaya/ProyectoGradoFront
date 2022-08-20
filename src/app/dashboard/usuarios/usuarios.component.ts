@@ -27,13 +27,11 @@ export class UsuariosComponent implements OnInit {
 
   constructor(private _User: UserService, public dialog: MatDialog, private utils:UtilsService) {
     this.add = true;
-    console.log(this.utils.parseJwt(localStorage.getItem('token') as string))
     this.rol=this.utils.parseJwt(localStorage.getItem('token') as string).rol
   }
 
   getData(){
     this._User.Get().subscribe(value => {
-      console.log(value.users)
       this.UserList = value.users;//.map((estacion:Estacion) => estacion.nombre);
     })
   }
@@ -74,7 +72,6 @@ export class UsuariosComponent implements OnInit {
             this.UserList = this.UserList.filter(
               (usr) => usr.uid != usuario.uid
             );
-            console.log(resp);
           });
       }
     });

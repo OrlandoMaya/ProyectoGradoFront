@@ -32,7 +32,6 @@ export class FallasComponent implements OnInit {
 
   getData() {
     this.mantenimientoService.Get().subscribe((mantenimientos) => {
-      console.log(mantenimientos)
       this.mantenimientos = mantenimientos.mantenimientoes;
       this.chartOptions = {
         series: [

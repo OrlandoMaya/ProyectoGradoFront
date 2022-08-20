@@ -27,7 +27,7 @@ export class ReportesComponent implements OnInit {
   ngOnInit(): void {
     this._station.Get().subscribe((value) => {
       this.StationList = value.estaciones.map((estacion: Estacion) => estacion);
-      console.log(this.StationList);
+      
     });
     this.Station.valueChanges.subscribe((values) => {
       if (values.length == 0) {
@@ -64,7 +64,6 @@ export class ReportesComponent implements OnInit {
             })
           );
         });
-        // console.log("data",this.data);
         this.StationSelected = values;
       });
     });

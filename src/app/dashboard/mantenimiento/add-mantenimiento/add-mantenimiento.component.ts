@@ -30,7 +30,6 @@ export class AddMantenimientoComponent implements OnInit {
       this.estaciones=info.estaciones;
     })
     this.usuarioService.Get().subscribe(info=>{
-      console.log(info)
       this.usuarios=info.users;
     })
     this.addMantenimientoForm=this.fb.group({
@@ -46,7 +45,6 @@ export class AddMantenimientoComponent implements OnInit {
     const mantenimiento = this.addMantenimientoForm.value;
     mantenimiento.estado="En progreso";
     this.mantenimientoService.New(mantenimiento).subscribe(resp=>{
-      console.log(resp)
       this.dialogRef.close();
     })
   }

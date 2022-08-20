@@ -27,7 +27,7 @@ export class AddUsuarioComponent implements OnInit {
 
   addStation(){
     this.userService.New(this.addUsuarioForm.value).subscribe(resp=>{
-      console.log(resp)
+      
       this.dialogRef.close();
     })
   }

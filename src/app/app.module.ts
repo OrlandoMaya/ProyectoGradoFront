@@ -29,6 +29,7 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   port: 8083,
   path: '/mqtt',
   clean: true,
+  protocol:'wss'
 };
 
 @NgModule({

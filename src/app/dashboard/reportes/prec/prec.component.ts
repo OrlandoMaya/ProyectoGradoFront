@@ -43,7 +43,6 @@ export class PrecComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.item.length > 0) {
-      console.log(this.item)
       const dataInfo = this.item.map((station) => {
         return {
           name: station.station.nombre,

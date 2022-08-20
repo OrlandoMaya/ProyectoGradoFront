@@ -4,6 +4,7 @@
     height: calc(100% - 32px);
     justify-content: space-between;
     padding-bottom: 16px;
+    overflow: auto;
     .leftContainer{
         width: 100%;
         position: relative;
@@ -19,6 +20,15 @@
         display: flex;
         &>*{
             width: 33%;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .rightContainer{
+        flex-direction: column;
+        &>*{
+            width: calc(100% - 36px)!important;
         }
     }
 }

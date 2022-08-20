@@ -65,7 +65,6 @@ export class MapComponent implements OnInit, OnDestroy {
     this.subscription = this._mqttService
       .observe('flowriver/#')
       .subscribe((message: IMqttMessage) => {
-        console.log(message)
         this.getData();
       });
   }
@@ -74,7 +73,6 @@ export class MapComponent implements OnInit, OnDestroy {
     this._station.Get().subscribe((value) => {
       this.StationList = []
       this.StationList = value.estaciones
-      //console.log(this.StationList)
       for (let i = 0; i < this.StationList.length; i++) {
         this._control.GetByStation(this.StationList[i].uid, 2).subscribe((resp: any) => {
           let f = {
@@ -96,16 +94,14 @@ export class MapComponent implements OnInit, OnDestroy {
             precipitacion2: resp.control[0].precipitacion - resp.control[1].precipitacion,
             fecha: resp.control[0].fecha,
           }
-          //console.log(f)
           this.ControlList2[i] = f
         });
       }
     });
-    console.log(this.ControlList2)
   }
 
 
-  //this._control.GetByStation(id, 2).subscribe((resp: any) => {console.log(resp); this.algo = resp;});
+  //this._control.GetByStation(id, 2).subscribe((resp: any) => {this.algo = resp;});
 
   _position(i: Card) {
     this.position = {

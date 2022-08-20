@@ -43,7 +43,6 @@ export class EstacionesComponent implements OnInit {
   getData(){
     this.estacionService.Get().subscribe((info: any) => {
       this.dataSource = info.estaciones;
-      console.log(info);
     });
   }
 
@@ -94,10 +93,8 @@ export class EstacionesComponent implements OnInit {
           .subscribe((resp) => {
             this.dataSource.find((sta) => sta.uid == station.uid).enabled =
               event.checked;
-            console.log(resp);
           });
       } else {
-        console.log(event);
         event.source.writeValue(!event.checked);
       }
     });
