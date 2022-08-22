@@ -1,5 +1,5 @@
 <div class="head">
-  <app-navbar></app-navbar>
+  <app-navbar [sidebar]="sideBarOpen" (openSidebar)="sideBarOpen=$event"></app-navbar>
 </div>
 
 <mat-drawer-container>

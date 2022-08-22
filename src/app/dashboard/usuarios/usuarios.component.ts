@@ -57,7 +57,7 @@ export class UsuariosComponent implements OnInit {
     const title = '¿Desea eliminar el usuario?';
     const onAccept = 'Eliminar';
     const dialogRef = this.dialog.open(ConfirmComponent, {
-      width: '30vw',
+      panelClass:"dialog-responsive",
       data: {
         title,
         onRefuse: 'Cancelar',

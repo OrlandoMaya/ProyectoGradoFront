@@ -52,7 +52,7 @@ export class EstacionesComponent implements OnInit {
 
   addStation(): void {
     const dialogRef = this.dialog.open(AddEstacionComponent, {
-      width: '30vw',
+      panelClass:"dialog-responsive",
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -62,7 +62,7 @@ export class EstacionesComponent implements OnInit {
 
   editStation(estacion: any): void {
     const dialogRef = this.dialog.open(UpdateEstacionComponent, {
-      width: '30vw',
+      panelClass:"dialog-responsive",
       data: estacion,
     });
 
@@ -77,7 +77,7 @@ export class EstacionesComponent implements OnInit {
       : '¿Desea deshabilitar la estación?';
     const onAccept = event.checked ? 'Habilitar' : 'Deshabilitar';
     const dialogRef = this.dialog.open(ConfirmComponent, {
-      width: '30vw',
+      panelClass:"dialog-responsive",
       data: {
         title,
         onRefuse: 'Cancelar',

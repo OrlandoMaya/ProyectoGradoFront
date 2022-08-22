@@ -47,7 +47,7 @@ export class MantenimientoComponent implements OnInit {
 
   addMantenimiento() {
     const dialogRef = this.dialog.open(AddMantenimientoComponent, {
-      width: '30vw',
+      panelClass:"dialog-responsive",
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -62,7 +62,7 @@ export class MantenimientoComponent implements OnInit {
     const dataInfo = { fechaFin: today, estado:"Finalizado" };
 
     const dialogRef = this.dialog.open(ConfirmComponent, {
-      width: '30vw',
+      panelClass:"dialog-responsive",
       data: {
         title,
         onRefuse: 'Cancelar',
@@ -89,7 +89,7 @@ export class MantenimientoComponent implements OnInit {
     const title = '¿Desea eliminar el informe de mantenimiento?';
     const onAccept = 'Eliminar';
     const dialogRef = this.dialog.open(ConfirmComponent, {
-      width: '30vw',
+      panelClass:"dialog-responsive",
       data: {
         title,
         onRefuse: 'Cancelar',

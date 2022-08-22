@@ -1,4 +1,6 @@
 .outerContainer{
+    width: 100%;
+    position: relative;
     .headerContainer{
         display: flex;
         justify-content: space-between;
@@ -10,9 +12,27 @@
         }
     }
     .bodyContainer{
+        width: 100%;
+        overflow-x: auto;
         table{
             width: 100%;
             margin-top: 20px;
         }
     }
+}
+
+.mat-cell,
+.mat-header-cell {
+    word-wrap: initial;
+    display: table-cell;
+    padding: 0px 10px;
+    line-break: unset;
+    width: min-content;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.mat-row,
+.mat-header-row {
+    display: table-row;
 }

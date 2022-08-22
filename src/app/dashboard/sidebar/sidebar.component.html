@@ -1,45 +1,40 @@
 <mat-nav-list>
   <div class="profile-card">
     <div class="header">
-      <h2>{{user.nombre}}</h2>
-      <h4>{{user.correo}}</h4>
+      <h2 class="nav-item">{{ user.nombre }}</h2>
+      <h4 class="nav-item">{{ user.correo }}</h4>
     </div>
     <a class="boton"></a>
-    <img src="./assets/Imgs/riverBackground.jpg">
-
+    <img class="nav-item" src="./assets/Imgs/riverBackground.jpg" />
   </div>
 
-  <mat-divider></mat-divider>
+  <mat-divider class="nav-item"></mat-divider>
 
-  <h4 matSubheader>Paginas</h4>
+  <h4 matSubheader class="nav-item">Paginas</h4>
 
   <a mat-list-item [routerLink]="['/dashboard']">
-    <span class="material-icons">
-      dashboard
-    </span>
-    Dashboard</a>
-    <a mat-list-item [routerLink]="['/dashboard/estaciones']">
-      <span class="material-icons">
-        settings_input_antenna
-      </span>
-      Estaciones</a>
+    <span class="material-icons"> dashboard </span>
+    <span class="nav-item"> Dashboard </span>
+  </a>
+  <a mat-list-item [routerLink]="['/dashboard/estaciones']">
+    <span class="material-icons"> settings_input_antenna </span>
+    <span class="nav-item"> Estaciones </span>
+  </a>
   <a mat-list-item [routerLink]="['/dashboard/usuarios']">
-    <span class="material-icons">
-      account_circle
-    </span>
-    Usuarios</a>
+    <span class="material-icons"> account_circle </span>
+    <span class="nav-item"> Usuarios </span>
+  </a>
   <a mat-list-item [routerLink]="['/dashboard/reportes']">
-    <span class="material-icons">
-      analytics
-    </span>Reportes</a>
-    <a mat-list-item [routerLink]="['/dashboard/mantenimientos']">
-      <span class="material-icons">
-        precision_manufacturing
-      </span>
-      Mantenimientos</a>
-    
+    <span class="material-icons"> analytics </span>
+    <span class="nav-item"> Reportes </span>
+  </a>
+  <a mat-list-item [routerLink]="['/dashboard/mantenimientos']">
+    <span class="material-icons"> precision_manufacturing </span>
 
-  <mat-divider></mat-divider>
+    <span class="nav-item"> Mantenimientos </span>
+  </a>
+
+  <mat-divider class="nav-item"></mat-divider>
   <!--
   <a mat-list-item routerLinkActive="list-item-active">
     <mat-icon>engineering</mat-icon>

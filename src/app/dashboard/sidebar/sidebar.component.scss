@@ -32,4 +32,13 @@ mat-divider {
   border-top-color: rgba(51, 255, 255, 0.1)!important;
 }
 
+@media (max-width: 800px) {
+  mat-nav-list{
+    padding: 0 !important;
+  }
+  .nav-item{
+    display: none !important;
+  }
+}
+
 

@@ -68,3 +68,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-form-field{
     width: 201px;
 }
+
+.dialog-responsive {
+    width: 30vw;
+}
+
+@media only screen and (max-width: 800px) {
+    .dialog-responsive {
+        width: 100%;
+    }
+}

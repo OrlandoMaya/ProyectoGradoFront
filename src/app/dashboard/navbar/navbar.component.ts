@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,8 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  @Output() openSidebar = new EventEmitter<boolean>(false);
+  @Input() sidebar!:boolean;
+  constructor( private router: Router) {
+    // if(window.innerWidth<=800){
+      
+    // }
+  }
 
-  constructor( private router: Router) { }
+  hideSidebar(){
+    this.openSidebar.emit(!this.sidebar)
+  }
 
   ngOnInit(): void {
   }

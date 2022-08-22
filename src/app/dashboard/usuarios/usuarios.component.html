@@ -4,6 +4,7 @@
     >add</mat-icon
   >
 </div>
+<div class="bodyContainer">
 
 <table mat-table [dataSource]="UserList" class="mat-elevation-z8 demo-table">
   <ng-container matColumnDef="uid">
@@ -52,6 +53,8 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
+</div>
+
 
 <br />
 <br />

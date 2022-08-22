@@ -25,10 +25,16 @@
 }
 
 @media (max-width: 800px) {
+    .leftContainer{
+        height: auto !important;
+    }
     .rightContainer{
         flex-direction: column;
         &>*{
-            width: calc(100% - 36px)!important;
+            width: calc(100% )!important;
         }
+    }
+    .card{
+        height: fit-content !important;
     }
 }
